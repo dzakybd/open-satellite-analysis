@@ -6,7 +6,7 @@ colorTo: gray
 sdk: static
 pinned: false
 license: mit
-short_description: "Five questions about places in Indonesia, answered from free satellite data"
+short_description: "Five places in Indonesia, from free satellite data"
 ---
 
 # open-satellite-analysis showcase
