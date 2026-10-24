@@ -1,0 +1,16 @@
+{
+  "mode": "NBR > 0.3 (cover on each date)",
+  "above": 0.3,
+  "pre_hectares": 2884.8,
+  "post_hectares": 1533.7,
+  "gained_hectares": 260.0,
+  "lost_hectares": 1611.1,
+  "kept_hectares": 1273.7,
+  "index": "NBR",
+  "pre": "runs/ikn-core/pre/NBR.tif",
+  "post": "runs/ikn-core/post/NBR.tif",
+  "res_m": 19.994068914999453,
+  "aoi_hectares": 4869.1,
+  "compared_pct": 69.4,
+  "note": "Pixels cloudy, shadowed or missing on either date are excluded (see compared_pct)."
+}

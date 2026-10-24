@@ -1,0 +1,245 @@
+{
+  "source": "sentinel-2",
+  "id": "S2B_52NCF_20190725_1_L2A",
+  "datetime": "2019-07-25T01:57:32.397000Z",
+  "date": "2019-07-25",
+  "platform": "sentinel-2b",
+  "tile": "52NCF",
+  "tile_cloud_pct": 13.688566,
+  "aoi_unusable_pct": 13.4,
+  "meets_max_cloud": false,
+  "target_date": "2019-08-15",
+  "stac_item": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2B_52NCF_20190725_1_L2A",
+  "checked": [
+    {
+      "id": "S2B_52NCF_20190814_0_L2A",
+      "date": "2019-08-14",
+      "tile_cloud_pct": 45.876201,
+      "aoi_unusable_pct": 67.5
+    },
+    {
+      "id": "S2B_52NCF_20190814_1_L2A",
+      "date": "2019-08-14",
+      "tile_cloud_pct": 53.552169,
+      "aoi_unusable_pct": 93.9
+    },
+    {
+      "id": "S2A_52NCF_20190819_0_L2A",
+      "date": "2019-08-19",
+      "tile_cloud_pct": 21.595864,
+      "aoi_unusable_pct": 43.6
+    },
+    {
+      "id": "S2A_52NCF_20190819_1_L2A",
+      "date": "2019-08-19",
+      "tile_cloud_pct": 28.054735,
+      "aoi_unusable_pct": 65.9
+    },
+    {
+      "id": "S2A_52NCF_20190809_0_L2A",
+      "date": "2019-08-09",
+      "tile_cloud_pct": 11.322733,
+      "aoi_unusable_pct": 71.5
+    },
+    {
+      "id": "S2A_52NCF_20190809_1_L2A",
+      "date": "2019-08-09",
+      "tile_cloud_pct": 15.279935,
+      "aoi_unusable_pct": 91.8
+    },
+    {
+      "id": "S2B_52NCF_20190824_0_L2A",
+      "date": "2019-08-24",
+      "tile_cloud_pct": 33.052187,
+      "aoi_unusable_pct": 63.1
+    },
+    {
+      "id": "S2B_52NCF_20190824_1_L2A",
+      "date": "2019-08-24",
+      "tile_cloud_pct": 39.108974,
+      "aoi_unusable_pct": 87.2
+    },
+    {
+      "id": "S2B_52NCF_20190804_0_L2A",
+      "date": "2019-08-04",
+      "tile_cloud_pct": 12.958874,
+      "aoi_unusable_pct": 64.7
+    },
+    {
+      "id": "S2B_52NCF_20190804_3_L2A",
+      "date": "2019-08-04",
+      "tile_cloud_pct": 18.873385,
+      "aoi_unusable_pct": 89.6
+    },
+    {
+      "id": "S2A_52NCF_20190829_1_L2A",
+      "date": "2019-08-29",
+      "tile_cloud_pct": 64.039785,
+      "aoi_unusable_pct": 100.0
+    },
+    {
+      "id": "S2A_52NCF_20190829_0_L2A",
+      "date": "2019-08-29",
+      "tile_cloud_pct": 69.029552,
+      "aoi_unusable_pct": 99.9
+    },
+    {
+      "id": "S2A_52NCF_20190730_0_L2A",
+      "date": "2019-07-30",
+      "tile_cloud_pct": 92.328819,
+      "aoi_unusable_pct": 100.0
+    },
+    {
+      "id": "S2A_52NCF_20190730_1_L2A",
+      "date": "2019-07-30",
+      "tile_cloud_pct": 93.382013,
+      "aoi_unusable_pct": 100.0
+    },
+    {
+      "id": "S2B_52NCF_20190903_0_L2A",
+      "date": "2019-09-03",
+      "tile_cloud_pct": 47.669417,
+      "aoi_unusable_pct": 67.3
+    },
+    {
+      "id": "S2B_52NCF_20190903_1_L2A",
+      "date": "2019-09-03",
+      "tile_cloud_pct": 50.547618,
+      "aoi_unusable_pct": 74.2
+    },
+    {
+      "id": "S2B_52NCF_20190725_1_L2A",
+      "date": "2019-07-25",
+      "tile_cloud_pct": 13.688566,
+      "aoi_unusable_pct": 13.4
+    },
+    {
+      "id": "S2B_52NCF_20190725_3_L2A",
+      "date": "2019-07-25",
+      "tile_cloud_pct": 17.417316,
+      "aoi_unusable_pct": 26.5
+    },
+    {
+      "id": "S2A_52NCF_20190908_0_L2A",
+      "date": "2019-09-08",
+      "tile_cloud_pct": 9.405102,
+      "aoi_unusable_pct": 18.0
+    },
+    {
+      "id": "S2A_52NCF_20190908_1_L2A",
+      "date": "2019-09-08",
+      "tile_cloud_pct": 13.375562,
+      "aoi_unusable_pct": 38.3
+    }
+  ],
+  "newer_scenes_skipped": [
+    {
+      "id": "S2B_52NCF_20190814_0_L2A",
+      "date": "2019-08-14",
+      "tile_cloud_pct": 45.876201,
+      "aoi_unusable_pct": 67.5
+    },
+    {
+      "id": "S2B_52NCF_20190814_1_L2A",
+      "date": "2019-08-14",
+      "tile_cloud_pct": 53.552169,
+      "aoi_unusable_pct": 93.9
+    },
+    {
+      "id": "S2A_52NCF_20190819_0_L2A",
+      "date": "2019-08-19",
+      "tile_cloud_pct": 21.595864,
+      "aoi_unusable_pct": 43.6
+    },
+    {
+      "id": "S2A_52NCF_20190819_1_L2A",
+      "date": "2019-08-19",
+      "tile_cloud_pct": 28.054735,
+      "aoi_unusable_pct": 65.9
+    },
+    {
+      "id": "S2A_52NCF_20190809_0_L2A",
+      "date": "2019-08-09",
+      "tile_cloud_pct": 11.322733,
+      "aoi_unusable_pct": 71.5
+    },
+    {
+      "id": "S2A_52NCF_20190809_1_L2A",
+      "date": "2019-08-09",
+      "tile_cloud_pct": 15.279935,
+      "aoi_unusable_pct": 91.8
+    },
+    {
+      "id": "S2B_52NCF_20190824_0_L2A",
+      "date": "2019-08-24",
+      "tile_cloud_pct": 33.052187,
+      "aoi_unusable_pct": 63.1
+    },
+    {
+      "id": "S2B_52NCF_20190824_1_L2A",
+      "date": "2019-08-24",
+      "tile_cloud_pct": 39.108974,
+      "aoi_unusable_pct": 87.2
+    },
+    {
+      "id": "S2B_52NCF_20190804_0_L2A",
+      "date": "2019-08-04",
+      "tile_cloud_pct": 12.958874,
+      "aoi_unusable_pct": 64.7
+    },
+    {
+      "id": "S2B_52NCF_20190804_3_L2A",
+      "date": "2019-08-04",
+      "tile_cloud_pct": 18.873385,
+      "aoi_unusable_pct": 89.6
+    },
+    {
+      "id": "S2A_52NCF_20190829_1_L2A",
+      "date": "2019-08-29",
+      "tile_cloud_pct": 64.039785,
+      "aoi_unusable_pct": 100.0
+    },
+    {
+      "id": "S2A_52NCF_20190829_0_L2A",
+      "date": "2019-08-29",
+      "tile_cloud_pct": 69.029552,
+      "aoi_unusable_pct": 99.9
+    },
+    {
+      "id": "S2A_52NCF_20190730_0_L2A",
+      "date": "2019-07-30",
+      "tile_cloud_pct": 92.328819,
+      "aoi_unusable_pct": 100.0
+    },
+    {
+      "id": "S2A_52NCF_20190730_1_L2A",
+      "date": "2019-07-30",
+      "tile_cloud_pct": 93.382013,
+      "aoi_unusable_pct": 100.0
+    },
+    {
+      "id": "S2B_52NCF_20190903_0_L2A",
+      "date": "2019-09-03",
+      "tile_cloud_pct": 47.669417,
+      "aoi_unusable_pct": 67.3
+    },
+    {
+      "id": "S2B_52NCF_20190903_1_L2A",
+      "date": "2019-09-03",
+      "tile_cloud_pct": 50.547618,
+      "aoi_unusable_pct": 74.2
+    },
+    {
+      "id": "S2A_52NCF_20190908_0_L2A",
+      "date": "2019-09-08",
+      "tile_cloud_pct": 9.405102,
+      "aoi_unusable_pct": 18.0
+    },
+    {
+      "id": "S2A_52NCF_20190908_1_L2A",
+      "date": "2019-09-08",
+      "tile_cloud_pct": 13.375562,
+      "aoi_unusable_pct": 38.3
+    }
+  ]
+}

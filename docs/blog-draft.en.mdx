@@ -1,10 +1,10 @@
 ---
-title: "sentinel-indices: Seeing Through the Karhutla Smoke With Free Sentinel-2 Data and an AI Agent"
+title: "open-satellite-analysis: Seeing Through the Karhutla Smoke With Free Sentinel-2 Data and an AI Agent"
 date: "2026-10-24"
 tags: ["ai", "agents", "remote-sensing", "geospatial"]
 summary: "Ask an AI agent how much burned at a place and get hectares, maps and a check against NASA fire hotspots, from free Sentinel-2 and Landsat imagery and the Awesome Spectral Indices catalog. No account, no API key. Tested on the October 2026 peatland fires in Pulang Pisau, Central Kalimantan."
 language: en
-cover: "/og/sentinel-indices-og-en.png"
+cover: "/og/open-satellite-analysis-og-en.png"
 readingTime: "11 min read"
 ---
 
@@ -14,15 +14,15 @@ On 21 October 2026, Sentinel-2 passed over Pulang Pisau in Central Kalimantan, i
 
 The same pass also recorded shortwave infrared, and in that band the smoke mostly disappears. What shows instead is a burn scar several kilometres long and the line of the fire front at its edge.
 
-![Pulang Pisau, 21 Oct 2026: smoke in true colour, the burn scar and fire front in shortwave infrared, and the burn-severity map with NASA VIIRS hotspots on top.](/media/sentinel-indices/pulangpisau-hero.png)
+![Pulang Pisau, 21 Oct 2026: smoke in true colour, the burn scar and fire front in shortwave infrared, and the burn-severity map with NASA VIIRS hotspots on top.](/media/open-satellite-analysis/pulangpisau-hero.png)
 
-That image is free. So is everything needed to turn it into a number: the imagery, the index formulas, and NASA's fire detections. What is missing is the glue, the steps between "here is a scene" and "about 2,900 hectares burned, and here is the evidence". Those are the steps where people, and AI agents, go wrong. I built [sentinel-indices](https://github.com/dzakybd/sentinel-indices) to do them.
+That image is free. So is everything needed to turn it into a number: the imagery, the index formulas, and NASA's fire detections. What is missing is the glue, the steps between "here is a scene" and "about 2,900 hectares burned, and here is the evidence". Those are the steps where people, and AI agents, go wrong. I built [open-satellite-analysis](https://github.com/dzakybd/open-satellite-analysis) to do them.
 
-**Code:** [github.com/dzakybd/sentinel-indices](https://github.com/dzakybd/sentinel-indices) (MIT) · **Demo:** [huggingface.co/spaces/dzakybd/sentinel-indices](https://huggingface.co/spaces/dzakybd/sentinel-indices)
+**Code:** [github.com/dzakybd/open-satellite-analysis](https://github.com/dzakybd/open-satellite-analysis) (MIT) · **Demo:** [huggingface.co/spaces/dzakybd/open-satellite-analysis](https://huggingface.co/spaces/dzakybd/open-satellite-analysis)
 
 > **TL;DR**
 >
-> - **What it is:** a skill that answers questions about a place from Sentinel-2. Give it an address or coordinates and a question; it returns numbers, maps and the limits that apply. Two versions, like [pid-parser](/en/blog/pid-parser-pid-to-graph): a skill for coding agents (`npx skills add dzakybd/sentinel-indices`) and a LangChain Deep Agents version.
+> - **What it is:** a skill that answers questions about a place from Sentinel-2. Give it an address or coordinates and a question; it returns numbers, maps and the limits that apply. Two versions, like [pid-parser](/en/blog/pid-parser-pid-to-graph): a skill for coding agents (`npx skills add dzakybd/open-satellite-analysis`) and a LangChain Deep Agents version.
 > - **Free data, no keys:** Sentinel-2 from Earth Search (Element 84, on AWS), Landsat 8/9 from Microsoft Planetary Computer, 245 indices from the Awesome Spectral Indices catalog computed with spyndex, NASA FIRMS VIIRS and MODIS hotspots, and OpenStreetMap geocoding.
 > - **On the Pulang Pisau fires:** Sentinel-2 found about 2,925 ha of confident burn (dNBR ≥ 0.27) by 21 October, in the third of a 196 km² area it could see through the smoke; 266 of 318 visible VIIRS hotspots (83.6%) land within 190 m of it. Landsat 8 saw the whole area on 4 October: about 4,000 ha.
 > - **Where it is weak:** smoke hides the ground for weeks at the peak of the fires, the severity classes come from temperate forests, and 20 m pixels miss small fires.
@@ -83,7 +83,7 @@ Sentinel-2 is not the only free optical satellite. Landsat 8 and 9 image the sam
 
 For Pulang Pisau that filled the gap. Landsat 8 passed on 4 October and its cloud mask flagged none of the area. True colour shows a smoke plume; shortwave infrared shows the burn scar, with the fire front glowing along its southern edge.
 
-![Landsat 8 on 4 October 2026 over the same area: a smoke plume in true colour, the burn scar and a glowing fire front in shortwave infrared, and the dNBR map against 25 August.](/media/sentinel-indices/pulangpisau-landsat.png)
+![Landsat 8 on 4 October 2026 over the same area: a smoke plume in true colour, the burn scar and a glowing fire front in shortwave infrared, and the dNBR map against 25 August.](/media/open-satellite-analysis/pulangpisau-landsat.png)
 
 | Landsat 8/9 | |
 |---|---|
@@ -131,7 +131,7 @@ That is the honest shape of satellite fire monitoring: the heat sensors see the 
 ## Try It
 
 ```bash
-npx skills add dzakybd/sentinel-indices
+npx skills add dzakybd/open-satellite-analysis
 ```
 
 Then ask your coding agent something like "how much burned around Pulang Pisau since August?" Or run the Deep Agents version from the repo. Everything it touches is free.

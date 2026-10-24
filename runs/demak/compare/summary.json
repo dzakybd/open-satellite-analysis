@@ -1,0 +1,17 @@
+{
+  "mode": "VV_dB < -15.0 (cover on each date)",
+  "threshold": -15.0,
+  "direction": "below",
+  "pre_hectares": 161.9,
+  "post_hectares": 1013.2,
+  "gained_hectares": 1003.1,
+  "lost_hectares": 151.8,
+  "kept_hectares": 10.2,
+  "index": "VV_dB",
+  "pre": "runs/demak/pre/VV_dB.tif",
+  "post": "runs/demak/flood/VV_dB.tif",
+  "res_m": 20.002518570867057,
+  "aoi_hectares": 32192.1,
+  "compared_pct": 100.0,
+  "note": "Pixels cloudy, shadowed or missing on either date are excluded (see compared_pct)."
+}

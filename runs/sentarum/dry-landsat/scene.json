@@ -1,0 +1,47 @@
+{
+  "source": "landsat",
+  "id": "LC09_L2SP_120059_20260807_02_T1",
+  "datetime": "2026-08-07T02:45:32.576293Z",
+  "date": "2026-08-07",
+  "platform": "landsat-9",
+  "tile": "120/059",
+  "tile_cloud_pct": 6.22,
+  "aoi_unusable_pct": 0.5,
+  "meets_max_cloud": true,
+  "target_date": "2026-08-15",
+  "stac_item": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/landsat-c2-l2/items/LC09_L2SP_120059_20260807_02_T1",
+  "checked": [
+    {
+      "id": "LC08_L2SP_120060_20260815_02_T1",
+      "date": "2026-08-15",
+      "tile_cloud_pct": 43.86,
+      "aoi_unusable_pct": 83.7
+    },
+    {
+      "id": "LC08_L2SP_120059_20260815_02_T1",
+      "date": "2026-08-15",
+      "tile_cloud_pct": 48.15,
+      "aoi_unusable_pct": 19.6
+    },
+    {
+      "id": "LC09_L2SP_120059_20260807_02_T1",
+      "date": "2026-08-07",
+      "tile_cloud_pct": 6.22,
+      "aoi_unusable_pct": 0.5
+    }
+  ],
+  "newer_scenes_skipped": [
+    {
+      "id": "LC08_L2SP_120060_20260815_02_T1",
+      "date": "2026-08-15",
+      "tile_cloud_pct": 43.86,
+      "aoi_unusable_pct": 83.7
+    },
+    {
+      "id": "LC08_L2SP_120059_20260815_02_T1",
+      "date": "2026-08-15",
+      "tile_cloud_pct": 48.15,
+      "aoi_unusable_pct": 19.6
+    }
+  ]
+}

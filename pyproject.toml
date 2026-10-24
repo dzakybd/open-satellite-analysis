@@ -1,5 +1,5 @@
 [project]
-name = "sentinel-indices"
+name = "open-satellite-analysis"
 version = "0.1.0"
 description = "Answer questions about a place from free Sentinel-2 imagery and spectral indices: agent skill and Deep Agents runner"
 license = "MIT"

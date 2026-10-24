@@ -18,7 +18,7 @@ Numbers come from `runs/kalteng-2/compare/summary.json` (Pulang Pisau, 29 Aug vs
 
 > The 21 October Sentinel-2 image over Pulang Pisau, Central Kalimantan, shows nothing but smoke. Switch to shortwave infrared and the burn scar and the fire front are right there.
 >
-> I built sentinel-indices, an open-source skill that lets an AI agent answer questions about a place from free satellite data, with no account and no API key:
+> I built open-satellite-analysis, an open-source skill that lets an AI agent answer questions about a place from free satellite data, with no account and no API key:
 >
 > 1. Address or coordinates → an area of interest
 > 2. The clearest Sentinel-2 scene for that area, judged from the cloud mask over the area itself, not the whole 110 km tile (a tile listed at 13.6% cloud had 66% of our area under smoke)
@@ -33,7 +33,7 @@ Numbers come from `runs/kalteng-2/compare/summary.json` (Pulang Pisau, 29 Aug vs
 >
 > It runs as a skill in Claude Code or Codex, or as a LangChain Deep Agent. Same shape as my pid-parser project.
 >
-> Code: github.com/dzakybd/sentinel-indices · Write-up: dzaky.ai.id/en/blog/sentinel-indices-karhutla
+> Code: github.com/dzakybd/open-satellite-analysis · Write-up: dzaky.ai.id/en/blog/open-satellite-analysis
 >
 > #RemoteSensing #Sentinel2 #GeoAI #Karhutla #AIAgents
 

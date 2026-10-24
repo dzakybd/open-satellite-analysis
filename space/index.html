@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>sentinel-indices</title>
-<meta name="description" content="Seeing through the karhutla smoke: burned area in Pulang Pisau, Central Kalimantan, from free Sentinel-2 and Landsat imagery.">
+<title>open-satellite-analysis</title>
+<meta name="description" content="Five questions about places in Indonesia, answered from free public satellite data: fire, mining, land clearing, a seasonal lake and a flood.">
 <style>
 :root {
   --bg: #f7f7f5; --panel: #ffffff; --fg: #1d1d1b; --muted: #6b6b66; --line: #e2e2dc; --accent: #b4441e;
@@ -44,50 +44,43 @@ footer { margin-top: 28px; font-size: 13px; }
 </head>
 <body>
 <main>
-  <h1>sentinel-indices</h1>
-  <p class="muted">Ask a question about a place, get an answer from free satellite data: Sentinel-2 and Landsat imagery, 245 spectral indices (Awesome Spectral Indices via spyndex), checked against NASA FIRMS fire hotspots. No account, no API key. This page shows precomputed runs and calls no model.</p>
-  <p>Area: 14 km &times; 14 km around -2.8, 114.05, Pulang Pisau, Central Kalimantan, during the October 2026 peatland fires.
-    Code: <a href="https://github.com/dzakybd/sentinel-indices">github.com/dzakybd/sentinel-indices</a> &middot;
-    Write-up: <a href="https://dzaky.ai.id/en/blog/sentinel-indices-karhutla">dzaky.ai.id</a></p>
+  <h1>open-satellite-analysis</h1>
+  <p class="muted">Ask a question about a place, get an answer from free public satellite data: Sentinel-2, Landsat 8/9 and Sentinel-1 radar, plus NASA fire hotspots. Published spectral indices and simple thresholds, <b>no machine-learning model</b>. No account, no API key. This page shows precomputed runs and calls no model.</p>
+  <p>Code: <a href="https://github.com/dzakybd/open-satellite-analysis">github.com/dzakybd/open-satellite-analysis</a> &middot;
+    Write-up: <a href="https://dzaky.ai.id/en/blog/open-satellite-analysis">dzaky.ai.id</a></p>
 
-  <div class="tabs" id="tabs" role="group" aria-label="Run"></div>
+  <div class="tabs" id="tabs" role="group" aria-label="Use case"></div>
+  <h2 id="title" style="margin-top:18px"></h2>
+  <p class="muted" id="subtitle"></p>
   <div class="stats" id="stats"></div>
 
-  <div class="row">
+  <div class="row" id="gallery-row">
     <section class="panel">
-      <h2>The scene</h2>
       <div class="seg" id="views" role="group" aria-label="Picture"></div>
       <img id="scene" alt="">
       <p class="muted" id="scene-note" style="margin-top:8px"></p>
     </section>
-    <section class="panel">
-      <h2>Burn severity (dNBR, before minus after)</h2>
-      <img id="dnbr" alt="">
-      <table id="classes" style="margin-top:10px"></table>
+    <section class="panel" id="side">
+      <h2 id="side-title">Detail</h2>
+      <table id="classes"></table>
+      <p id="note" style="margin-top:10px"></p>
+      <h2 style="margin-top:14px">Ground truth</h2>
+      <ul id="refs" style="margin:0;padding-left:18px"></ul>
     </section>
   </div>
 
   <section class="panel" id="answer-panel" style="margin-top:16px" hidden>
     <h2>The Deep Agent's answer</h2>
     <div class="answer" id="answer"></div>
-    <p class="muted" id="run-meta" style="margin-top:8px"></p>
   </section>
 
   <footer class="muted">
-    Contains modified Copernicus Sentinel data 2026 (via Earth Search, Element 84) and Landsat 8/9 data (USGS, via Microsoft Planetary Computer).
-    Fire hotspots: NASA FIRMS VIIRS. Burn severity classes: Key &amp; Benson (2006), USGS FIREMON; calibrated on temperate forests, so read them as relative severity on tropical peat.
+    Contains modified Copernicus Sentinel data 2019-2026 (Sentinel-1 and -2, via Earth Search and Microsoft Planetary Computer) and Landsat 8/9 data (USGS). Fire hotspots: NASA FIRMS VIIRS. Burn severity classes: Key &amp; Benson (2006), USGS FIREMON, calibrated on temperate forests.
     Index changes show that the surface changed, not why or who caused it.
   </footer>
 </main>
 <script>
-const VIEWS = [
-  ["post-swir_false_color.png", "After, SWIR"],
-  ["post-true_color.png", "After, true colour"],
-  ["pre-swir_false_color.png", "Before, SWIR"],
-  ["pre-true_color.png", "Before, true colour"],
-];
-const fmt = (n) => Math.round(n).toLocaleString("en-US");
-let runs = [], current = null, view = VIEWS[0][0];
+let cases = [], current = null, view = 0;
 
 function el(tag, attrs = {}, text = "") {
   const e = document.createElement(tag);
@@ -96,62 +89,59 @@ function el(tag, attrs = {}, text = "") {
   return e;
 }
 
-function stat(value, label) {
-  const d = el("div", { class: "stat" });
-  d.append(el("b", {}, value), el("span", {}, label));
-  return d;
-}
-
 function render() {
-  const r = current;
-  document.querySelectorAll("#tabs button").forEach((b) => b.setAttribute("aria-pressed", b.dataset.id === r.id));
-  document.querySelectorAll("#views button").forEach((b) => b.setAttribute("aria-pressed", b.dataset.v === view));
-  const stats = document.getElementById("stats");
-  stats.replaceChildren(
-    stat(`${fmt(r.confident_ha)} ha`, "confident burn (dNBR ≥ 0.27)"),
-    stat(`${fmt(r.possible_ha)} ha`, "possible burn (low severity, haze-sensitive)"),
-    stat(`${r.compared_pct}%`, "of the area visible on both dates"),
-    r.hotspot_check && r.hotspot_check.visible
-      ? stat(`${r.hotspot_check.agreement_pct}%`, `of ${r.hotspot_check.visible} visible VIIRS hotspots on the burn`)
-      : stat("–", "no hotspots between these dates in the 7-day file"),
-  );
-  const scene = document.getElementById("scene");
-  scene.src = `data/${r.id}/${view}`;
-  scene.alt = `${r.title}: ${VIEWS.find((v) => v[0] === view)[1]}`;
-  document.getElementById("scene-note").textContent =
-    `Before ${r.pre.date} (${r.pre.id}) · after ${r.post.date} (${r.post.id}), ${r.post.aoi_unusable_pct}% of the area under cloud or smoke in the after scene.`;
-  const dnbr = document.getElementById("dnbr");
-  dnbr.src = `data/${r.id}/compare-dnbr.png`;
-  dnbr.alt = `Burn severity map for ${r.title}`;
+  const c = current;
+  document.querySelectorAll("#tabs button").forEach((b) => b.setAttribute("aria-pressed", b.dataset.id === c.id));
+  document.getElementById("title").textContent = c.title;
+  document.getElementById("subtitle").textContent = [c.subtitle, c.sensor, c.dates].filter(Boolean).join(" · ");
+  document.getElementById("stats").replaceChildren(...c.stats.map(([v, l]) => {
+    const d = el("div", { class: "stat" });
+    d.append(el("b", {}, v), el("span", {}, l));
+    return d;
+  }));
+  const hasImages = c.images.length > 0;
+  document.getElementById("gallery-row").style.gridTemplateColumns = hasImages ? "" : "1fr";
+  document.querySelector("#gallery-row .panel").hidden = !hasImages;
+  if (hasImages) {
+    view = Math.min(view, c.images.length - 1);
+    const views = document.getElementById("views");
+    views.replaceChildren(...c.images.map(([f, label], i) => {
+      const b = el("button", { type: "button", "aria-pressed": String(i === view) }, label);
+      b.onclick = () => { view = i; render(); };
+      return b;
+    }));
+    const img = document.getElementById("scene");
+    img.src = `data/${c.id}/${c.images[view][0]}`;
+    img.alt = `${c.title}: ${c.images[view][1]}`;
+    document.getElementById("scene-note").textContent = c.images[view][1];
+  }
   const table = document.getElementById("classes");
-  table.replaceChildren(...r.classes.map((c) => {
+  table.replaceChildren(...c.table.map(([k, v]) => {
     const tr = el("tr");
-    tr.append(el("td", {}, c.class), el("td", {}, `${c.hectares.toLocaleString("en-US")} ha`));
+    tr.append(el("td", {}, k), el("td", {}, v));
     return tr;
   }));
+  document.getElementById("side-title").textContent = c.table.length ? "Burn severity (dNBR, before minus after)" : "How to read this";
+  document.getElementById("note").textContent = c.note;
+  document.getElementById("refs").replaceChildren(...c.refs.map(([text, url]) => {
+    const li = el("li");
+    const a = el("a", { href: url, target: "_blank", rel: "noopener" }, text);
+    li.append(a);
+    return li;
+  }));
   const panel = document.getElementById("answer-panel");
-  panel.hidden = !r.answer;
-  if (r.answer) {
-    document.getElementById("answer").textContent = r.answer.replace(/\]\(\s*\/[^)]*\)/g, "]").replace(/\*\*/g, "");
-    document.getElementById("run-meta").textContent =
-      `${r.run.model}, reasoning effort ${r.run.effort}: ${r.run.seconds} s, ${r.run.tool_calls} tool calls, ${fmt(r.run.input_tokens)} input tokens.`;
-  }
+  panel.hidden = !c.answer;
+  if (c.answer) document.getElementById("answer").textContent = c.answer.replace(/\]\(\s*\/[^)]*\)/g, "]").replace(/\*\*/g, "");
 }
 
 fetch("data/index.json").then((r) => r.json()).then((data) => {
-  runs = data;
-  current = runs[0];
+  cases = data;
+  current = cases[0];
   const tabs = document.getElementById("tabs");
-  runs.forEach((r) => {
-    const b = el("button", { type: "button", "data-id": r.id }, r.title);
-    b.onclick = () => { current = r; render(); };
+  cases.forEach((c) => {
+    const b = el("button", { type: "button", "data-id": c.id }, c.title);
+    b.onclick = () => { current = c; view = 0; render(); };
     tabs.append(b);
-  });
-  const views = document.getElementById("views");
-  VIEWS.forEach(([v, label]) => {
-    const b = el("button", { type: "button", "data-v": v }, label);
-    b.onclick = () => { view = v; render(); };
-    views.append(b);
   });
   render();
 });

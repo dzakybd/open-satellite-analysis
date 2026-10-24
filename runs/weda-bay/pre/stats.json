@@ -1,0 +1,50 @@
+{
+  "scene": {
+    "source": "sentinel-2",
+    "id": "S2B_52NCF_20190725_1_L2A",
+    "date": "2019-07-25",
+    "platform": "sentinel-2b",
+    "tile": "52NCF",
+    "aoi_unusable_pct": 13.4
+  },
+  "aoi": {
+    "name": "Lelilef Sawai, Halmahera Tengah, Maluku Utara, Indonesia",
+    "lat": 0.5866272,
+    "lng": 127.9860048,
+    "bbox": [
+      127.95007,
+      0.550695,
+      128.021939,
+      0.62256
+    ],
+    "source": "OpenStreetMap Nominatim"
+  },
+  "grid": {
+    "crs": "EPSG:32652",
+    "res_m": 20,
+    "width": 400,
+    "height": 397
+  },
+  "NDVI": {
+    "long_name": "Normalized Difference Vegetation Index",
+    "domain": "vegetation",
+    "formula": "(N-R)/(N+R)",
+    "reference": "https://ntrs.nasa.gov/citations/19740022614",
+    "valid_pct": 86.6,
+    "mean": 0.6247,
+    "median": 0.6389,
+    "p10": 0.3793,
+    "p90": 0.8373
+  },
+  "NBR": {
+    "long_name": "Normalized Burn Ratio",
+    "domain": "burn",
+    "formula": "(N-S2)/(N+S2)",
+    "reference": "https://doi.org/10.3133/ofr0211",
+    "valid_pct": 86.6,
+    "mean": 0.4141,
+    "median": 0.4008,
+    "p10": 0.1862,
+    "p90": 0.6544
+  }
+}

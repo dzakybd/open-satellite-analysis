@@ -1,0 +1,44 @@
+{
+  "scene": {
+    "source": "sentinel-1",
+    "id": "S1A_IW_GRDH_1SDV_20240208T221739_20240208T221804_052473_0658A4_rtc",
+    "date": "2024-02-08",
+    "platform": "SENTINEL-1A",
+    "orbit": "descending-76",
+    "aoi_unusable_pct": 0.0
+  },
+  "aoi": {
+    "name": "Karanganyar, Demak, Jawa Tengah, Indonesia",
+    "lat": -6.8438014,
+    "lng": 110.7713465,
+    "bbox": [
+      110.689918,
+      -6.924649,
+      110.852775,
+      -6.762953
+    ],
+    "source": "OpenStreetMap Nominatim"
+  },
+  "grid": {
+    "crs": "EPSG:32749",
+    "res_m": 20,
+    "width": 900,
+    "height": 894
+  },
+  "VV_dB": {
+    "long_name": "Sentinel-1 RTC VV backscatter, dB",
+    "valid_pct": 100.0,
+    "mean": -7.27,
+    "p10": -10.35,
+    "p90": -3.49,
+    "below_minus15_pct": 3.1
+  },
+  "VH_dB": {
+    "long_name": "Sentinel-1 RTC VH backscatter, dB",
+    "valid_pct": 100.0,
+    "mean": -13.99,
+    "p10": -16.5,
+    "p90": -11.92,
+    "below_minus15_pct": 22.8
+  }
+}

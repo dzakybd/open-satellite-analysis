@@ -1,0 +1,39 @@
+{
+  "scene": {
+    "source": "sentinel-2",
+    "id": "S2B_50MME_20260918_0_L2A",
+    "date": "2026-09-18",
+    "platform": "sentinel-2b",
+    "tile": "50MME",
+    "aoi_unusable_pct": 7.9
+  },
+  "aoi": {
+    "name": "Sepaku, Penajam Paser Utara, Kalimantan Timur, Indonesia",
+    "lat": -0.9015033,
+    "lng": 116.7657531,
+    "bbox": [
+      116.729816,
+      -0.937436,
+      116.80169,
+      -0.865571
+    ],
+    "source": "OpenStreetMap Nominatim"
+  },
+  "grid": {
+    "crs": "EPSG:32750",
+    "res_m": 20,
+    "width": 400,
+    "height": 397
+  },
+  "NDVI": {
+    "long_name": "Normalized Difference Vegetation Index",
+    "domain": "vegetation",
+    "formula": "(N-R)/(N+R)",
+    "reference": "https://ntrs.nasa.gov/citations/19740022614",
+    "valid_pct": 92.1,
+    "mean": 0.5849,
+    "median": 0.6517,
+    "p10": 0.2324,
+    "p90": 0.7855
+  }
+}

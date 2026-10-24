@@ -1,0 +1,149 @@
+{
+  "source": "sentinel-2",
+  "id": "S2C_49NFA_20260830_1_L2A",
+  "datetime": "2026-08-30T02:57:43.891000Z",
+  "date": "2026-08-30",
+  "platform": "sentinel-2c",
+  "tile": "49NFA",
+  "tile_cloud_pct": 9.040748,
+  "aoi_unusable_pct": 17.5,
+  "meets_max_cloud": false,
+  "target_date": "2026-09-01",
+  "stac_item": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2C_49NFA_20260830_1_L2A",
+  "checked": [
+    {
+      "id": "S2C_49NFA_20260830_1_L2A",
+      "date": "2026-08-30",
+      "tile_cloud_pct": 9.040748,
+      "aoi_unusable_pct": 17.5
+    },
+    {
+      "id": "S2C_49NFB_20260830_0_L2A",
+      "date": "2026-08-30",
+      "tile_cloud_pct": 17.566988,
+      "aoi_unusable_pct": 44.2
+    },
+    {
+      "id": "S2A_49NFB_20260904_0_L2A",
+      "date": "2026-09-04",
+      "tile_cloud_pct": 93.591464,
+      "aoi_unusable_pct": 100.0
+    },
+    {
+      "id": "S2B_49NFA_20260828_0_L2A",
+      "date": "2026-08-28",
+      "tile_cloud_pct": 21.313322,
+      "aoi_unusable_pct": 99.9
+    },
+    {
+      "id": "S2B_49NFB_20260828_0_L2A",
+      "date": "2026-08-28",
+      "tile_cloud_pct": 45.434961,
+      "aoi_unusable_pct": 100.0
+    },
+    {
+      "id": "S2B_49NFB_20260825_0_L2A",
+      "date": "2026-08-25",
+      "tile_cloud_pct": 32.772008,
+      "aoi_unusable_pct": 44.2
+    },
+    {
+      "id": "S2B_49NFA_20260825_0_L2A",
+      "date": "2026-08-25",
+      "tile_cloud_pct": 36.268377,
+      "aoi_unusable_pct": 25.3
+    },
+    {
+      "id": "S2C_49NFB_20260909_0_L2A",
+      "date": "2026-09-09",
+      "tile_cloud_pct": 85.30972,
+      "aoi_unusable_pct": 100.0
+    },
+    {
+      "id": "S2C_49NFA_20260823_0_L2A",
+      "date": "2026-08-23",
+      "tile_cloud_pct": 45.487744,
+      "aoi_unusable_pct": 83.1
+    },
+    {
+      "id": "S2C_49NFB_20260823_0_L2A",
+      "date": "2026-08-23",
+      "tile_cloud_pct": 51.497817,
+      "aoi_unusable_pct": 84.4
+    },
+    {
+      "id": "S2C_49NFA_20260820_0_L2A",
+      "date": "2026-08-20",
+      "tile_cloud_pct": 30.917069,
+      "aoi_unusable_pct": 71.9
+    },
+    {
+      "id": "S2C_49NFB_20260820_0_L2A",
+      "date": "2026-08-20",
+      "tile_cloud_pct": 31.276017,
+      "aoi_unusable_pct": 38.5
+    },
+    {
+      "id": "S2B_49NFB_20260818_1_L2A",
+      "date": "2026-08-18",
+      "tile_cloud_pct": 46.850133,
+      "aoi_unusable_pct": 100.0
+    },
+    {
+      "id": "S2B_49NFB_20260818_0_L2A",
+      "date": "2026-08-18",
+      "tile_cloud_pct": 46.851063,
+      "aoi_unusable_pct": 100.0
+    },
+    {
+      "id": "S2B_49NFA_20260818_0_L2A",
+      "date": "2026-08-18",
+      "tile_cloud_pct": 89.489043,
+      "aoi_unusable_pct": 95.0
+    },
+    {
+      "id": "S2B_49NFA_20260818_1_L2A",
+      "date": "2026-08-18",
+      "tile_cloud_pct": 89.4894,
+      "aoi_unusable_pct": 95.0
+    },
+    {
+      "id": "S2A_49NFA_20260815_1_L2A",
+      "date": "2026-08-15",
+      "tile_cloud_pct": 18.05125,
+      "aoi_unusable_pct": 85.4
+    },
+    {
+      "id": "S2B_49NFA_20260815_0_L2A",
+      "date": "2026-08-15",
+      "tile_cloud_pct": 47.400126,
+      "aoi_unusable_pct": 29.2
+    },
+    {
+      "id": "S2B_49NFB_20260815_0_L2A",
+      "date": "2026-08-15",
+      "tile_cloud_pct": 53.885782,
+      "aoi_unusable_pct": 48.8
+    },
+    {
+      "id": "S2A_49NFB_20260815_1_L2A",
+      "date": "2026-08-15",
+      "tile_cloud_pct": 59.073478,
+      "aoi_unusable_pct": 89.4
+    }
+  ],
+  "newer_scenes_skipped": [
+    {
+      "id": "S2A_49NFB_20260904_0_L2A",
+      "date": "2026-09-04",
+      "tile_cloud_pct": 93.591464,
+      "aoi_unusable_pct": 100.0
+    },
+    {
+      "id": "S2C_49NFB_20260909_0_L2A",
+      "date": "2026-09-09",
+      "tile_cloud_pct": 85.30972,
+      "aoi_unusable_pct": 100.0
+    }
+  ]
+}

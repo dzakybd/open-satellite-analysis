@@ -1,0 +1,17 @@
+{
+  "mode": "NDWI > 0.0 (cover on each date)",
+  "threshold": 0.0,
+  "direction": "above",
+  "pre_hectares": 11440.3,
+  "post_hectares": 27.5,
+  "gained_hectares": 0.0,
+  "lost_hectares": 11412.8,
+  "kept_hectares": 27.5,
+  "index": "NDWI",
+  "pre": "runs/sentarum-landsat/wet/NDWI.tif",
+  "post": "runs/sentarum-landsat/dry/NDWI.tif",
+  "res_m": 30.00193792224299,
+  "aoi_hectares": 32188.2,
+  "compared_pct": 76.6,
+  "note": "Pixels cloudy, shadowed or missing on either date are excluded (see compared_pct)."
+}

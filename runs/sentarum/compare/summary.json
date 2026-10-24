@@ -1,0 +1,16 @@
+{
+  "mode": "MNDWI > 0.0 (cover on each date)",
+  "above": 0.0,
+  "pre_hectares": 7323.3,
+  "post_hectares": 10401.2,
+  "gained_hectares": 9841.5,
+  "lost_hectares": 6763.7,
+  "kept_hectares": 559.7,
+  "index": "MNDWI",
+  "pre": "runs/sentarum/wet/MNDWI.tif",
+  "post": "runs/sentarum/dry/MNDWI.tif",
+  "res_m": 20.00129194816199,
+  "aoi_hectares": 32188.2,
+  "compared_pct": 69.3,
+  "note": "Pixels cloudy, shadowed or missing on either date are excluded (see compared_pct)."
+}

@@ -1,0 +1,50 @@
+{
+  "scene": {
+    "source": "landsat",
+    "id": "LC08_L2SP_120059_20260511_02_T1",
+    "date": "2026-05-11",
+    "platform": "landsat-8",
+    "tile": "120/059",
+    "aoi_unusable_pct": 22.9
+  },
+  "aoi": {
+    "name": "Danau Sentarum, Sekulat, Selimbau, Kapuas Hulu, Kalimantan Barat, Indonesia",
+    "lat": 0.8358797,
+    "lng": 112.1116345,
+    "bbox": [
+      112.030778,
+      0.755032,
+      112.192491,
+      0.916728
+    ],
+    "source": "OpenStreetMap Nominatim"
+  },
+  "grid": {
+    "crs": "EPSG:32649",
+    "res_m": 30,
+    "width": 600,
+    "height": 596
+  },
+  "MNDWI": {
+    "long_name": "Modified Normalized Difference Water Index",
+    "domain": "water",
+    "formula": "(G-S1)/(G+S1)",
+    "reference": "https://doi.org/10.1080/01431160600589179",
+    "valid_pct": 77.1,
+    "mean": 0.2049,
+    "median": 0.0911,
+    "p10": -0.5613,
+    "p90": 0.9854
+  },
+  "NDWI": {
+    "long_name": "Normalized Difference Water Index",
+    "domain": "water",
+    "formula": "(G-N)/(G+N)",
+    "reference": "https://doi.org/10.1080/01431169608948714",
+    "valid_pct": 77.1,
+    "mean": -0.0765,
+    "median": -0.2157,
+    "p10": -0.7681,
+    "p90": 0.6131
+  }
+}

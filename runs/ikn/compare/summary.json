@@ -1,0 +1,16 @@
+{
+  "mode": "NDVI > 0.5 (cover on each date)",
+  "above": 0.5,
+  "pre_hectares": 4655.8,
+  "post_hectares": 3866.1,
+  "gained_hectares": 378.3,
+  "lost_hectares": 1168.0,
+  "kept_hectares": 3487.8,
+  "index": "NDVI",
+  "pre": "runs/ikn/pre/NDVI.tif",
+  "post": "runs/ikn/post/NDVI.tif",
+  "res_m": 19.993426308031047,
+  "aoi_hectares": 6347.8,
+  "compared_pct": 83.4,
+  "note": "Pixels cloudy, shadowed or missing on either date are excluded (see compared_pct)."
+}

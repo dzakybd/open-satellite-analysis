@@ -1,0 +1,23 @@
+{
+  "source": "sentinel-1",
+  "id": "S1A_IW_GRDH_1SDV_20240119T105853_20240119T105922_052174_064E99_rtc",
+  "datetime": "2024-01-19T10:59:08.032065Z",
+  "date": "2024-01-19",
+  "platform": "SENTINEL-1A",
+  "orbit": "ascending-127",
+  "tile": "radar",
+  "tile_cloud_pct": null,
+  "aoi_unusable_pct": 0.0,
+  "meets_max_cloud": true,
+  "target_date": "2024-01-19",
+  "stac_item": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/sentinel-1-rtc/items/S1A_IW_GRDH_1SDV_20240119T105853_20240119T105922_052174_064E99_rtc",
+  "checked": [
+    {
+      "id": "S1A_IW_GRDH_1SDV_20240119T105853_20240119T105922_052174_064E99_rtc",
+      "date": "2024-01-19",
+      "tile_cloud_pct": null,
+      "aoi_unusable_pct": 0.0
+    }
+  ],
+  "newer_scenes_skipped": []
+}

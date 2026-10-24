@@ -1,0 +1,17 @@
+{
+  "mode": "NBR < 0.1 (cover on each date)",
+  "threshold": 0.1,
+  "direction": "below",
+  "pre_hectares": 146.5,
+  "post_hectares": 438.6,
+  "gained_hectares": 376.1,
+  "lost_hectares": 84.0,
+  "kept_hectares": 62.5,
+  "index": "NBR",
+  "pre": "runs/weda-bay/pre/NBR.tif",
+  "post": "runs/weda-bay/post/NBR.tif",
+  "res_m": 19.998758085753654,
+  "aoi_hectares": 6351.2,
+  "compared_pct": 84.3,
+  "note": "Pixels cloudy, shadowed or missing on either date are excluded (see compared_pct)."
+}

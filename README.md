@@ -1,4 +1,4 @@
-# sentinel-indices
+# open-satellite-analysis
 
 Ask a question about a place, get an answer from free satellite data. Give an address or coordinates and a question ("how much burned here this fire season?"). The skill finds the clearest Sentinel-2 or Landsat 8/9 scene over that exact area, picks a spectral index from the [Awesome Spectral Indices](https://github.com/awesome-spectral-indices/awesome-spectral-indices) catalog (245 that work on Sentinel-2), computes it with [spyndex](https://github.com/awesome-spectral-indices/spyndex), compares dates, and checks fires against NASA FIRMS hotspots (VIIRS and MODIS). No account, no API key, no GPU.
 
@@ -6,10 +6,10 @@ Ask a question about a place, get an answer from free satellite data. Give an ad
 
 Two versions, like [pid-parser](https://github.com/dzakybd/pid-parser):
 
-1. **A skill for coding agents** (Claude Code, Codex and others that load `SKILL.md` skills): `npx skills add dzakybd/sentinel-indices`
+1. **A skill for coding agents** (Claude Code, Codex and others that load `SKILL.md` skills): `npx skills add dzakybd/open-satellite-analysis`
 2. **A LangChain Deep Agents version** you can run in your own agent workflow (`agent/run.py`)
 
-See the Pulang Pisau runs (Sentinel-2, Landsat and the Deep Agent's answer), no install needed: [huggingface.co/spaces/dzakybd/sentinel-indices](https://huggingface.co/spaces/dzakybd/sentinel-indices). The write-up, step by step: [dzaky.ai.id/en/blog/sentinel-indices-karhutla](https://dzaky.ai.id/en/blog/sentinel-indices-karhutla).
+See the Pulang Pisau runs (Sentinel-2, Landsat and the Deep Agent's answer), no install needed: [huggingface.co/spaces/dzakybd/open-satellite-analysis](https://huggingface.co/spaces/dzakybd/open-satellite-analysis). The write-up, step by step: [dzaky.ai.id/en/blog/open-satellite-analysis](https://dzaky.ai.id/en/blog/open-satellite-analysis).
 
 Useful for: measuring burned area during forest and land fires (karhutla), checking whether a plot was cleared or burned after a cutoff date, mapping flood extent, tracking crop or forest health, watching bare soil spread around a mine, and giving an agent numbers and pictures instead of raw tiles.
 
@@ -39,10 +39,10 @@ Landsat and Sentinel-1 are also on Earth Search, but in requester-pays buckets t
 ## Install the skill
 
 ```bash
-npx skills add dzakybd/sentinel-indices
+npx skills add dzakybd/open-satellite-analysis
 ```
 
-Or copy `skills/sentinel-indices/` into your harness's skills folder. The scripts run with `uv run` and install their own dependencies (rasterio, spyndex, NumPy, Matplotlib).
+Or copy `skills/open-satellite-analysis/` into your harness's skills folder. The scripts run with `uv run` and install their own dependencies (rasterio, spyndex, NumPy, Matplotlib).
 
 ## The pipeline
 

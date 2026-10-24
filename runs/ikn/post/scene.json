@@ -1,0 +1,34 @@
+{
+  "source": "sentinel-2",
+  "id": "S2B_50MME_20260918_0_L2A",
+  "datetime": "2026-09-18T02:37:57.077000Z",
+  "date": "2026-09-18",
+  "platform": "sentinel-2b",
+  "tile": "50MME",
+  "tile_cloud_pct": 25.337744,
+  "aoi_unusable_pct": 7.9,
+  "meets_max_cloud": true,
+  "target_date": "2026-09-15",
+  "stac_item": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2B_50MME_20260918_0_L2A",
+  "checked": [
+    {
+      "id": "S2C_50MMD_20260913_0_L2A",
+      "date": "2026-09-13",
+      "tile_cloud_pct": 35.974887,
+      "aoi_unusable_pct": 61.3
+    },
+    {
+      "id": "S2C_50MME_20260913_0_L2A",
+      "date": "2026-09-13",
+      "tile_cloud_pct": 55.445045,
+      "aoi_unusable_pct": 44.9
+    },
+    {
+      "id": "S2B_50MME_20260918_0_L2A",
+      "date": "2026-09-18",
+      "tile_cloud_pct": 25.337744,
+      "aoi_unusable_pct": 7.9
+    }
+  ],
+  "newer_scenes_skipped": []
+}

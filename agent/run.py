@@ -1,10 +1,10 @@
-"""Run the sentinel-indices skill with a LangChain Deep Agent on a ChatGPT-authenticated Codex model.
+"""Run the open-satellite-analysis skill with a LangChain Deep Agent on a ChatGPT-authenticated Codex model.
 
 One-time login: uv run python -c "from langchain_openai.chatgpt_oauth import login_chatgpt; login_chatgpt()"
 
 Usage: uv run python agent/run.py <workdir> "<question>" [--model gpt-6-luna] [--effort low|medium|high]
 
-The agent loads skills/sentinel-indices/SKILL.md, runs the scripts in <workdir>, and ends with an answer.
+The agent loads skills/open-satellite-analysis/SKILL.md, runs the scripts in <workdir>, and ends with an answer.
 answer.md holds that answer, run.json the time, tool calls and tokens.
 """
 
@@ -58,7 +58,7 @@ def main():
         backend=LocalShellBackend(root_dir=work, virtual_mode=False, timeout=600, inherit_env=True),
     )
     task = (
-        f"{args.question}\n\nUse the sentinel-indices skill (SKILL_DIR is {skills / 'sentinel-indices'}). "
+        f"{args.question}\n\nUse the open-satellite-analysis skill (SKILL_DIR is {skills / 'open-satellite-analysis'}). "
         f"Use {work} as the work directory for every file you write."
     )
     start = time.time()
