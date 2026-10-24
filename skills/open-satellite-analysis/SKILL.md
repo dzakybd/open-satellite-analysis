@@ -1,6 +1,6 @@
 ---
 name: open-satellite-analysis
-description: Answer questions about a place on Earth from free public satellite data: Sentinel-2 and Landsat 8/9 optical imagery with spectral indices (NBR, NDVI, MNDWI and 240 more from Awesome Spectral Indices), and Sentinel-1 radar for floods. Geocodes an address, finds the clearest scene near a date, computes indices (no machine-learning model), compares two dates (burned area, bare ground from mining or clearing, seasonal water, flood extent) and checks fires against NASA FIRMS hotspots. No account or API key. Use when asked what burned, flooded, was cleared, greened or changed at a location, about forest and land fires (karhutla), or to get satellite imagery or an index for an address or coordinates.
+description: Answer questions about a place on Earth from free public satellite data: Sentinel-2 and Landsat 8/9 optical imagery with spectral indices (NBR, NDVI, MNDWI and 240 more from Awesome Spectral Indices), and Sentinel-1 radar for floods. Geocodes an address, finds the clearest scene near a date, computes indices, compares two dates (burned area, bare ground from mining or clearing, seasonal water, flood extent) and checks fires against NASA FIRMS hotspots. No account or API key. Use when asked what burned, flooded, was cleared, greened or changed at a location, about forest and land fires (karhutla), or to get satellite imagery or an index for an address or coordinates.
 ---
 
 # Satellite spectral indices (Sentinel-2, Landsat)
