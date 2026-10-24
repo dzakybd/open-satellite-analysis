@@ -102,3 +102,14 @@ The agent loads the same `SKILL.md`, runs the scripts in the work directory, and
 - Burn severity classes: Key & Benson (2006), FIREMON Landscape Assessment.
 
 Code: MIT.
+
+## Built on
+
+- [Awesome Spectral Indices](https://github.com/awesome-spectral-indices/awesome-spectral-indices) and [spyndex](https://github.com/awesome-spectral-indices/spyndex) (Montero et al., 2023): the index catalog and the library that computes it.
+- [rasterio](https://github.com/rasterio/rasterio) (GDAL), NumPy, Matplotlib.
+- [Earth Search](https://element84.com/earth-search/) (Element 84) and [Microsoft Planetary Computer](https://planetarycomputer.microsoft.com): STAC catalogs for Sentinel-2, Landsat 8/9 and Sentinel-1.
+- [NASA FIRMS](https://firms.modaps.eosdis.nasa.gov): active-fire hotspots.
+- [OpenStreetMap Nominatim](https://nominatim.org): geocoding. Map data © OpenStreetMap contributors (ODbL).
+- Copernicus Sentinel data (ESA) and Landsat (USGS / NASA).
+- USGS FIREMON burn-severity classes (Key & Benson, 2006).
+- [LangChain Deep Agents](https://docs.langchain.com/oss/python/deepagents/overview) and the [skills CLI](https://github.com/vercel-labs/skills).
