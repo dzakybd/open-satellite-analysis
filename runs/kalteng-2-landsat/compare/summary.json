@@ -1,0 +1,81 @@
+{
+  "mode": "dNBR (pre - post)",
+  "confident_burned_hectares": 4002.8,
+  "possible_burned_hectares": 2560.8,
+  "classes": [
+    {
+      "class": "high regrowth",
+      "dnbr_range": [
+        -Infinity,
+        -0.25
+      ],
+      "pixels": 1,
+      "hectares": 0.1
+    },
+    {
+      "class": "low regrowth",
+      "dnbr_range": [
+        -0.25,
+        -0.1
+      ],
+      "pixels": 151,
+      "hectares": 13.6
+    },
+    {
+      "class": "unburned",
+      "dnbr_range": [
+        -0.1,
+        0.1
+      ],
+      "pixels": 144623,
+      "hectares": 13031.1
+    },
+    {
+      "class": "low severity",
+      "dnbr_range": [
+        0.1,
+        0.27
+      ],
+      "pixels": 28421,
+      "hectares": 2560.8
+    },
+    {
+      "class": "moderate-low severity",
+      "dnbr_range": [
+        0.27,
+        0.44
+      ],
+      "pixels": 23788,
+      "hectares": 2143.4
+    },
+    {
+      "class": "moderate-high severity",
+      "dnbr_range": [
+        0.44,
+        0.66
+      ],
+      "pixels": 20248,
+      "hectares": 1824.4
+    },
+    {
+      "class": "high severity",
+      "dnbr_range": [
+        0.66,
+        Infinity
+      ],
+      "pixels": 388,
+      "hectares": 35.0
+    }
+  ],
+  "hotspot_check": {
+    "hotspots_between_dates": 0,
+    "note": "no hotspots between 2026-08-25 and 2026-10-04"
+  },
+  "index": "NBR",
+  "pre": "runs/kalteng-2-landsat/pre/NBR.tif",
+  "post": "runs/kalteng-2-landsat/post/NBR.tif",
+  "res_m": 30.01731086556681,
+  "aoi_hectares": 19608.4,
+  "compared_pct": 100.0,
+  "note": "Pixels cloudy, shadowed or missing on either date are excluded (see compared_pct)."
+}

@@ -1,0 +1,76 @@
+{
+  "mode": "dNBR (pre - post)",
+  "burned_hectares": 3771.8,
+  "classes": [
+    {
+      "class": "high regrowth",
+      "dnbr_range": [
+        -Infinity,
+        -0.25
+      ],
+      "pixels": 25,
+      "hectares": 1.0
+    },
+    {
+      "class": "low regrowth",
+      "dnbr_range": [
+        -0.25,
+        -0.1
+      ],
+      "pixels": 2778,
+      "hectares": 111.1
+    },
+    {
+      "class": "unburned",
+      "dnbr_range": [
+        -0.1,
+        0.1
+      ],
+      "pixels": 122766,
+      "hectares": 4910.0
+    },
+    {
+      "class": "low severity",
+      "dnbr_range": [
+        0.1,
+        0.27
+      ],
+      "pixels": 90879,
+      "hectares": 3634.7
+    },
+    {
+      "class": "moderate-low severity",
+      "dnbr_range": [
+        0.27,
+        0.44
+      ],
+      "pixels": 963,
+      "hectares": 38.5
+    },
+    {
+      "class": "moderate-high severity",
+      "dnbr_range": [
+        0.44,
+        0.66
+      ],
+      "pixels": 1683,
+      "hectares": 67.3
+    },
+    {
+      "class": "high severity",
+      "dnbr_range": [
+        0.66,
+        Infinity
+      ],
+      "pixels": 782,
+      "hectares": 31.3
+    }
+  ],
+  "index": "NBR",
+  "pre": "runs/kalteng/pre/NBR.tif",
+  "post": "runs/kalteng/post/NBR.tif",
+  "res_m": 19.99879076020663,
+  "aoi_hectares": 10018.7,
+  "compared_pct": 87.8,
+  "note": "Pixels cloudy, shadowed or missing on either date are excluded (see compared_pct)."
+}

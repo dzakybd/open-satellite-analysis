@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>sentinel-indices</title>
+<meta name="description" content="Seeing through the karhutla smoke: burned area in Pulang Pisau, Central Kalimantan, from free Sentinel-2 and Landsat imagery.">
+<style>
+:root {
+  --bg: #f7f7f5; --panel: #ffffff; --fg: #1d1d1b; --muted: #6b6b66; --line: #e2e2dc; --accent: #b4441e;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --bg: #141413; --panel: #1d1d1b; --fg: #ecece6; --muted: #a3a39b; --line: #33332f; --accent: #f08a5d; }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--fg); font: 15px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif; }
+main { max-width: 1200px; margin: 0 auto; padding: 24px 16px 48px; }
+h1 { font-size: 26px; margin: 0 0 4px; }
+h2 { font-size: 17px; margin: 0 0 10px; }
+p { margin: 0 0 8px; }
+a { color: var(--accent); }
+.muted { color: var(--muted); }
+code, pre { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 13px; }
+.panel { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 16px; }
+.tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+.tabs button, .seg button { border: 1px solid var(--line); background: var(--panel); color: var(--fg); border-radius: 999px; padding: 6px 14px; font: inherit; cursor: pointer; }
+.tabs button[aria-pressed="true"], .seg button[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--bg); }
+.seg { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; }
+.seg button { font-size: 13px; padding: 4px 12px; }
+.stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-top: 16px; }
+@media (max-width: 700px) { .stats { grid-template-columns: repeat(2, 1fr); } }
+.stat { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; }
+.stat b { display: block; font-size: 22px; }
+.stat span { font-size: 13px; color: var(--muted); }
+.row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 16px; }
+@media (max-width: 860px) { .row { grid-template-columns: 1fr; } }
+img { width: 100%; height: auto; border-radius: 6px; display: block; }
+table { width: 100%; border-collapse: collapse; font-size: 14px; }
+td { padding: 4px 6px; border-bottom: 1px solid var(--line); }
+td:last-child { text-align: right; font-variant-numeric: tabular-nums; }
+.answer { white-space: pre-wrap; font-size: 14px; }
+footer { margin-top: 28px; font-size: 13px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>sentinel-indices</h1>
+  <p class="muted">Ask a question about a place, get an answer from free satellite data: Sentinel-2 and Landsat imagery, 245 spectral indices (Awesome Spectral Indices via spyndex), checked against NASA FIRMS fire hotspots. No account, no API key. This page shows precomputed runs and calls no model.</p>
+  <p>Area: 14 km &times; 14 km around -2.8, 114.05, Pulang Pisau, Central Kalimantan, during the October 2026 peatland fires.
+    Code: <a href="https://github.com/dzakybd/sentinel-indices">github.com/dzakybd/sentinel-indices</a> &middot;
+    Write-up: <a href="https://dzaky.ai.id/en/blog/sentinel-indices-karhutla">dzaky.ai.id</a></p>
+
+  <div class="tabs" id="tabs" role="group" aria-label="Run"></div>
+  <div class="stats" id="stats"></div>
+
+  <div class="row">
+    <section class="panel">
+      <h2>The scene</h2>
+      <div class="seg" id="views" role="group" aria-label="Picture"></div>
+      <img id="scene" alt="">
+      <p class="muted" id="scene-note" style="margin-top:8px"></p>
+    </section>
+    <section class="panel">
+      <h2>Burn severity (dNBR, before minus after)</h2>
+      <img id="dnbr" alt="">
+      <table id="classes" style="margin-top:10px"></table>
+    </section>
+  </div>
+
+  <section class="panel" id="answer-panel" style="margin-top:16px" hidden>
+    <h2>The Deep Agent's answer</h2>
+    <div class="answer" id="answer"></div>
+    <p class="muted" id="run-meta" style="margin-top:8px"></p>
+  </section>
+
+  <footer class="muted">
+    Contains modified Copernicus Sentinel data 2026 (via Earth Search, Element 84) and Landsat 8/9 data (USGS, via Microsoft Planetary Computer).
+    Fire hotspots: NASA FIRMS VIIRS. Burn severity classes: Key &amp; Benson (2006), USGS FIREMON; calibrated on temperate forests, so read them as relative severity on tropical peat.
+    Index changes show that the surface changed, not why or who caused it.
+  </footer>
+</main>
+<script>
+const VIEWS = [
+  ["post-swir_false_color.png", "After, SWIR"],
+  ["post-true_color.png", "After, true colour"],
+  ["pre-swir_false_color.png", "Before, SWIR"],
+  ["pre-true_color.png", "Before, true colour"],
+];
+const fmt = (n) => Math.round(n).toLocaleString("en-US");
+let runs = [], current = null, view = VIEWS[0][0];
+
+function el(tag, attrs = {}, text = "") {
+  const e = document.createElement(tag);
+  Object.entries(attrs).forEach(([k, v]) => e.setAttribute(k, v));
+  if (text) e.textContent = text;
+  return e;
+}
+
+function stat(value, label) {
+  const d = el("div", { class: "stat" });
+  d.append(el("b", {}, value), el("span", {}, label));
+  return d;
+}
+
+function render() {
+  const r = current;
+  document.querySelectorAll("#tabs button").forEach((b) => b.setAttribute("aria-pressed", b.dataset.id === r.id));
+  document.querySelectorAll("#views button").forEach((b) => b.setAttribute("aria-pressed", b.dataset.v === view));
+  const stats = document.getElementById("stats");
+  stats.replaceChildren(
+    stat(`${fmt(r.confident_ha)} ha`, "confident burn (dNBR ≥ 0.27)"),
+    stat(`${fmt(r.possible_ha)} ha`, "possible burn (low severity, haze-sensitive)"),
+    stat(`${r.compared_pct}%`, "of the area visible on both dates"),
+    r.hotspot_check && r.hotspot_check.visible
+      ? stat(`${r.hotspot_check.agreement_pct}%`, `of ${r.hotspot_check.visible} visible VIIRS hotspots on the burn`)
+      : stat("–", "no hotspots between these dates in the 7-day file"),
+  );
+  const scene = document.getElementById("scene");
+  scene.src = `data/${r.id}/${view}`;
+  scene.alt = `${r.title}: ${VIEWS.find((v) => v[0] === view)[1]}`;
+  document.getElementById("scene-note").textContent =
+    `Before ${r.pre.date} (${r.pre.id}) · after ${r.post.date} (${r.post.id}), ${r.post.aoi_unusable_pct}% of the area under cloud or smoke in the after scene.`;
+  const dnbr = document.getElementById("dnbr");
+  dnbr.src = `data/${r.id}/compare-dnbr.png`;
+  dnbr.alt = `Burn severity map for ${r.title}`;
+  const table = document.getElementById("classes");
+  table.replaceChildren(...r.classes.map((c) => {
+    const tr = el("tr");
+    tr.append(el("td", {}, c.class), el("td", {}, `${c.hectares.toLocaleString("en-US")} ha`));
+    return tr;
+  }));
+  const panel = document.getElementById("answer-panel");
+  panel.hidden = !r.answer;
+  if (r.answer) {
+    document.getElementById("answer").textContent = r.answer.replace(/\]\(\s*\/[^)]*\)/g, "]").replace(/\*\*/g, "");
+    document.getElementById("run-meta").textContent =
+      `${r.run.model}, reasoning effort ${r.run.effort}: ${r.run.seconds} s, ${r.run.tool_calls} tool calls, ${fmt(r.run.input_tokens)} input tokens.`;
+  }
+}
+
+fetch("data/index.json").then((r) => r.json()).then((data) => {
+  runs = data;
+  current = runs[0];
+  const tabs = document.getElementById("tabs");
+  runs.forEach((r) => {
+    const b = el("button", { type: "button", "data-id": r.id }, r.title);
+    b.onclick = () => { current = r; render(); };
+    tabs.append(b);
+  });
+  const views = document.getElementById("views");
+  VIEWS.forEach(([v, label]) => {
+    const b = el("button", { type: "button", "data-v": v }, label);
+    b.onclick = () => { view = v; render(); };
+    views.append(b);
+  });
+  render();
+});
+</script>
+</body>
+</html>

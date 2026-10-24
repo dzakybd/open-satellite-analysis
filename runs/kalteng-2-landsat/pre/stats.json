@@ -1,0 +1,49 @@
+{
+  "scene": {
+    "source": "landsat",
+    "id": "LC09_L2SP_118062_20260825_02_T1",
+    "date": "2026-08-25",
+    "platform": "landsat-9",
+    "tile": "118/062",
+    "aoi_unusable_pct": 0.0
+  },
+  "aoi": {
+    "name": "-2.8,114.05",
+    "lat": -2.8,
+    "lng": 114.05,
+    "bbox": [
+      113.987043,
+      -2.862882,
+      114.112957,
+      -2.737118
+    ]
+  },
+  "grid": {
+    "crs": "EPSG:32650",
+    "res_m": 30,
+    "width": 468,
+    "height": 465
+  },
+  "NBR": {
+    "long_name": "Normalized Burn Ratio",
+    "domain": "burn",
+    "formula": "(N-S2)/(N+S2)",
+    "reference": "https://doi.org/10.3133/ofr0211",
+    "valid_pct": 100.0,
+    "mean": 0.6846,
+    "median": 0.7024,
+    "p10": 0.5927,
+    "p90": 0.7564
+  },
+  "NDVI": {
+    "long_name": "Normalized Difference Vegetation Index",
+    "domain": "vegetation",
+    "formula": "(N-R)/(N+R)",
+    "reference": "https://ntrs.nasa.gov/citations/19740022614",
+    "valid_pct": 100.0,
+    "mean": 0.8191,
+    "median": 0.8302,
+    "p10": 0.7613,
+    "p90": 0.8636
+  }
+}

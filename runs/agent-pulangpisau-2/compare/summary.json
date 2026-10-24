@@ -1,0 +1,89 @@
+{
+  "mode": "dNBR (pre - post)",
+  "confident_burned_hectares": 2924.8,
+  "possible_burned_hectares": 1507.8,
+  "classes": [
+    {
+      "class": "high regrowth",
+      "dnbr_range": [
+        -Infinity,
+        -0.25
+      ],
+      "pixels": 507,
+      "hectares": 20.3
+    },
+    {
+      "class": "low regrowth",
+      "dnbr_range": [
+        -0.25,
+        -0.1
+      ],
+      "pixels": 3875,
+      "hectares": 154.8
+    },
+    {
+      "class": "unburned",
+      "dnbr_range": [
+        -0.1,
+        0.1
+      ],
+      "pixels": 51189,
+      "hectares": 2044.8
+    },
+    {
+      "class": "low severity",
+      "dnbr_range": [
+        0.1,
+        0.27
+      ],
+      "pixels": 37746,
+      "hectares": 1507.8
+    },
+    {
+      "class": "moderate-low severity",
+      "dnbr_range": [
+        0.27,
+        0.44
+      ],
+      "pixels": 57162,
+      "hectares": 2283.4
+    },
+    {
+      "class": "moderate-high severity",
+      "dnbr_range": [
+        0.44,
+        0.66
+      ],
+      "pixels": 15759,
+      "hectares": 629.5
+    },
+    {
+      "class": "high severity",
+      "dnbr_range": [
+        0.66,
+        Infinity
+      ],
+      "pixels": 299,
+      "hectares": 11.9
+    }
+  ],
+  "hotspot_check": {
+    "dates": [
+      "2026-08-29",
+      "2026-10-21"
+    ],
+    "hotspots_between_dates": 895,
+    "hidden_by_cloud_or_smoke": 391,
+    "visible": 504,
+    "on_confident_burn": 424,
+    "agreement_pct": 84.1,
+    "radius_m": 190
+  },
+  "index": "NBR",
+  "pre": "/Users/dzaky.fawwaz/Documents/Experiments/solo/sentinel-indices/runs/agent-pulangpisau-2/pre/NBR.tif",
+  "post": "/Users/dzaky.fawwaz/Documents/Experiments/solo/sentinel-indices/runs/agent-pulangpisau-2/post/NBR.tif",
+  "res_m": 19.986599146326867,
+  "aoi_hectares": 19601.5,
+  "compared_pct": 33.9,
+  "note": "Pixels cloudy, shadowed or missing on either date are excluded (see compared_pct)."
+}

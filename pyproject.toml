@@ -1,0 +1,21 @@
+[project]
+name = "sentinel-indices"
+version = "0.1.0"
+description = "Answer questions about a place from free Sentinel-2 imagery and spectral indices: agent skill and Deep Agents runner"
+license = "MIT"
+readme = "README.md"
+authors = [
+    { name = "Dzaky Zakiyal Fawwaz", email = "dzakybd@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "deepagents>=0.7.25",
+    "langchain-openai==1.7.2",
+    "matplotlib>=3.9",
+    "numpy>=2.0",
+    "rasterio>=1.4",
+    "spyndex>=0.12",
+]
+
+[tool.ruff]
+line-length = 120

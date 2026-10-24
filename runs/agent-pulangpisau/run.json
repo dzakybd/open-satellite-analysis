@@ -1,0 +1,11 @@
+{
+  "question": "How much land burned this fire season within about 7 km of -2.8, 114.05 in Pulang Pisau, Central Kalimantan, since the end of August 2026? Check the burn map against this week's fire hotspots.",
+  "model": "gpt-6-luna",
+  "effort": "low",
+  "harness": "deepagents",
+  "seconds": 274,
+  "tool_calls": 7,
+  "input_tokens": 44381,
+  "cached_tokens": 0,
+  "output_tokens": 1435
+}

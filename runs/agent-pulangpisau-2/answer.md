@@ -1,0 +1,9 @@
+**Question:** How much land burned this fire season within about 7 km of -2.8, 114.05 in Pulang Pisau, Central Kalimantan, since the end of August 2026? Check the burn map against this week's fire hotspots.
+
+**Estimated burn:** about **2,925 ha** of confident burn signal within the roughly 7 km-radius area, from **29 Aug to 21 Oct 2026**. Another **1,508 ha** showed lower-severity change and is less certain; it may include non-fire changes.
+
+The comparison uses Sentinel-2 scenes from **29 Aug 2026** (before) and **21 Oct 2026** (after). Only **33.9%** of the area was visible on both dates, so these figures apply to the comparable portion, not the full area. Of **504** hotspots between the scene dates that fell on jointly visible pixels, **424 (84.1%)** were within 190 m of a confident-burn pixel. The requested **last-seven-day** hotspot feed contained **2,115** heat detections for **17–23 Oct**; these post-date the 21 Oct image in part and are not all covered by the burn estimate.
+
+Files: [burn comparison map]( /Users/dzaky.fawwaz/Documents/Experiments/solo/sentinel-indices/runs/agent-pulangpisau-2/compare/dnbr.png), [before-scene SWIR image]( /Users/dzaky.fawwaz/Documents/Experiments/solo/sentinel-indices/runs/agent-pulangpisau-2/pre/swir_false_color.png), [after-scene SWIR image]( /Users/dzaky.fawwaz/Documents/Experiments/solo/sentinel-indices/runs/agent-pulangpisau-2/post/swir_false_color.png), [7-day hotspots data]( /Users/dzaky.fawwaz/Documents/Experiments/solo/sentinel-indices/runs/agent-pulangpisau-2/hotspots.json).
+
+Caveats: the after-scene had **66.1%** of the AOI obscured or unusable, and about **391** intervening hotspots fell on pixels hidden on one of the dates. Sentinel-2’s ~20 m pixels miss very small burns; hotspots are heat detections, not proof of fire. FIREMON severity classes are only relative guidance for tropical peat, and spectral change alone cannot establish its cause.
