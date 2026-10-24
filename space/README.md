@@ -6,15 +6,15 @@ colorTo: gray
 sdk: static
 pinned: false
 license: mit
-short_description: "Seeing through the karhutla smoke with free satellite data"
+short_description: "Five questions about places in Indonesia, answered from free satellite data"
 ---
 
 # open-satellite-analysis showcase
 
-Ask a question about a place, get an answer from free satellite data. Sentinel-2 and Landsat 8/9 imagery, 245 spectral indices from the Awesome Spectral Indices catalog (computed with spyndex), and a check against NASA FIRMS fire hotspots. No account, no API key.
+Ask a question about a place, get an answer from free public satellite data. Sentinel-2, Landsat 8/9 and Sentinel-1 radar, 245 published spectral indices (computed with spyndex), and NASA FIRMS fire hotspots. No account, no API key, and no machine-learning model.
 
-Precomputed results of [open-satellite-analysis](https://github.com/dzakybd/open-satellite-analysis) over a 14 km x 14 km area in Pulang Pisau, Central Kalimantan, during the October 2026 peatland fires, three ways: the scripts on Sentinel-2 (29 Aug vs 21 Oct), the scripts on Landsat 8/9 (25 Aug vs 4 Oct), and the Deep Agents runner (gpt-6-luna) answering the question in plain words. Each view shows the scene in true colour and shortwave infrared, the dNBR burn-severity map, and the hectares. The page calls no model.
+Five cases in Indonesia, each checked against news and reports: the October 2026 fires in Pulang Pisau (on Sentinel-2, on Landsat, and answered by a Deep Agent), nickel-mine expansion at Weda Bay, land clearing in the new capital's core area, the seasonal Danau Sentarum, and the February 2024 Demak flood from radar. Each view shows the scenes, the map, the hectares and the sources. The page calls no model.
 
-Two versions: a skill for coding agents (`npx skills add dzakybd/open-satellite-analysis`) and a LangChain Deep Agents version for your own agent workflow. The write-up: [dzaky.ai.id/en/blog/open-satellite-analysis](https://dzaky.ai.id/en/blog/open-satellite-analysis).
+Two versions: a skill for coding agents (`npx skills add dzakybd/open-satellite-analysis`) and a LangChain Deep Agents version for your own agent workflow. Code: [github.com/dzakybd/open-satellite-analysis](https://github.com/dzakybd/open-satellite-analysis). The write-up: [dzaky.ai.id/en/blog/open-satellite-analysis](https://dzaky.ai.id/en/blog/open-satellite-analysis).
 
-Contains modified Copernicus Sentinel data 2026 (via Earth Search, Element 84) and Landsat 8/9 data (USGS, via Microsoft Planetary Computer). Fire hotspots: NASA FIRMS. Code: MIT.
+Contains modified Copernicus Sentinel data 2019-2026 (via Earth Search, Element 84, and Microsoft Planetary Computer) and Landsat 8/9 data (USGS). Fire hotspots: NASA FIRMS. Code: MIT.
