@@ -165,7 +165,7 @@
   }
  ],
  "stats_columns": "1.3fr 1fr 1fr",
- "note": "**Masih bisa bertambah.** Sepertiga Tahura tertutup awan pada 5 Oktober, dan titik api masih terdeteksi sampai 23 Oktober. Berita melaporkan 677 ha.",
+ "note": "**Cara hitung:** indeks NBR = (NIR − SWIR2) / (NIR + SWIR2), dari cahaya inframerah dekat dan inframerah gelombang pendek. Hutan sehat ±0,7; setelah terbakar turun tajam. *Pasti terbakar* = NBR turun ≥ 0,27 setelah dikoreksi kabut asap (0,135); *kemungkinan* = turun ≥ 0,27 tanpa koreksi. **Masih bisa bertambah:** sepertiga Tahura tertutup awan, titik api masih ada sampai 23 Okt. Berita: 677 ha.",
  "note_at": [
   8.2,
   9.0
@@ -176,6 +176,6 @@
  ],
  "size": [
   1080,
-  1080
+  1350
  ]
 }

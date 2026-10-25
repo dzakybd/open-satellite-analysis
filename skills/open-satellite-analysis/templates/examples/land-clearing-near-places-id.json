@@ -115,7 +115,7 @@
    ]
   }
  ],
- "note": "**Bacaan jujurnya:** satelit gratis (30 m) hanya melihat ±30 ha lahan terbuka baru, jauh di bawah 200+ ha yang diberitakan. Sumur dan jalan kecil di bawah pohon tidak terlihat, dan citra tidak bisa memastikan penyebabnya (bisa juga kebun atau kebakaran).",
+ "note": "**Cara hitung:** indeks NBR = (NIR − SWIR2) / (NIR + SWIR2). Hutan ±0,7; tanah terbuka di bawah 0,3. *Lahan terbuka baru* = NBR turun ≥ 0,2 dari 2016 ke 2018 dan kini di bawah 0,3. **Bacaan jujurnya:** satelit gratis (30 m) hanya melihat ±30 ha, jauh di bawah 200+ ha yang diberitakan. Sumur dan jalan kecil di bawah pohon tidak terlihat, dan penyebabnya tidak bisa dipastikan (bisa juga kebun atau kebakaran).",
  "note_at": [
   7.2,
   8.0
