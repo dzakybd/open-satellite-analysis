@@ -5,6 +5,7 @@
 """Compute spectral indices (Awesome Spectral Indices, via spyndex) for one scene over the AOI.
 
     uv run compute_index.py work/aoi.json work/post/scene.json NBR NDVI --out work/post
+    uv run compute_index.py work/aoi.json work/post/scene.json NDWI --mask-snow --out work/post     # water in winter
 
 Works for Sentinel-2 (20 m grid) and Landsat 8/9 (30 m) scenes from find_scene.py. For a Sentinel-1 radar scene
 the "indices" are VV_dB and VH_dB: terrain-corrected backscatter in decibels (10 log10 of the linear power),
@@ -99,6 +100,7 @@ def main():
     ap.add_argument("aoi")
     ap.add_argument("scene")
     ap.add_argument("indices", nargs="+", help="short names from search_index.py, e.g. NBR NDVI NDWI")
+    ap.add_argument("--mask-snow", action="store_true", help="leave snow out (NaN), e.g. when mapping water in winter")
     ap.add_argument("--out", required=True)
     args = ap.parse_args()
 
@@ -116,7 +118,7 @@ def main():
 
     item = get_item(scene)
     crs, bounds, width, height, transform = aoi_grid(item, aoi["bbox"])
-    valid = usable_mask(item, bounds, width, height)
+    valid = usable_mask(item, bounds, width, height, mask_snow=args.mask_snow)
 
     cache = {}
 

@@ -68,6 +68,7 @@ Or copy `skills/open-satellite-analysis/` into your harness's skills folder. The
 | 4. Compute | `compute_index.py` (spyndex; `VV_dB`/`VH_dB` for radar) | `<INDEX>.tif/.png`, `stats.json`, true and SWIR false colour |
 | 5. Compare dates | `compare.py` (`--burn` dNBR, `--above`/`--below` cover, or change) | `dnbr.png` / `cover.png`, `summary.json` |
 | 6. Fire hotspots | `hotspots.py` (NASA FIRMS VIIRS + MODIS, last 24 h / 48 h / 7 d) | `hotspots.json` |
+| 7. Share a result | `layers.py` (photo and colour masks, optionally clipped to a park outline) then `card.py` (HTML card to PNG, `--animate` for GIF and MP4; needs Chrome) | `card.png/.gif/.mp4` |
 
 ## Deep Agents runner (ChatGPT sign-in)
 
@@ -89,6 +90,7 @@ The agent loads the same `SKILL.md`, runs the scripts in the work directory, and
 - Radar reads water under crops, trees and buildings as bright, so flood hectares are a lower bound.
 - FIREMON severity ranges come from temperate forests; on tropical peat read them as relative severity and check the SWIR image.
 - Thresholds (NBR 0.3, MNDWI 0, VV -15 dB) are literature defaults; they shift with season and sensor.
+- With snow in the scene, `MNDWI > 0` reads snow as water (it is the snow index NDSI under another name). Use `NDWI > 0.2` or `compute_index.py --mask-snow`; measured on one scene, see SKILL.md.
 - FIRMS public files cover only the last 7 days without a key.
 - Index changes show that the surface changed, not why or who caused it.
 

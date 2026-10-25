@@ -78,7 +78,7 @@ For a before/after pair ("how much burned since August?"):
 |---|---|
 | How much burned? | S2 or Landsat before (clear, before the fire) and after (latest); `compute_index.py ... NBR`; `compare.py ... --burn --hotspots` |
 | How much bare ground (mining, clearing, building)? | clear scene per year, same season; `NBR`; `compare.py ... --below 0.1` (bare) and `--above 0.3` (standing vegetation lost) |
-| Seasonal water, lake extent | one scene per season; `MNDWI`; `compare.py ... --above 0` |
+| Seasonal water, lake extent | one scene per season; `MNDWI`; `compare.py ... --above 0` (with snow in either scene: `NDWI` and `--above 0.2`, see Snow) |
 | Flood | **radar**, same relative orbit, one date just before and one during: `find_scene.py --source sentinel-1 --relative-orbit N`, `compute_index.py ... VV_dB`, `compare.py ... --below -15` |
 
 Use dates a few days to a few weeks apart for change, in the same season, and one source (and for radar one orbit) for both.
@@ -126,6 +126,37 @@ uv run SKILL_DIR/scripts/hotspots.py --bbox 108,-4.5,117,2 --days 7 --top 10    
 ```
 
 Default sensors are VIIRS on Suomi NPP, NOAA-20 and NOAA-21; add `--sensors ...,MODIS` for the 1 km MODIS detections. Only the last 24 h, 48 h or 7 days are public without a key. A hotspot is a heat signal, not a confirmed fire: gas flares and hot industrial sites also trigger it, and small or under-canopy fires are missed.
+
+## 7. Snow, and telling it from water
+
+**`MNDWI` and `NDSI` are the same formula**, (green - SWIR1) / (green + SWIR1), so a water test with `MNDWI > 0` reads snow as water. On a snowy Central Park scene (Sentinel-2, 5 Feb 2026) it called 100% of 15,927 clearly snowy pixels water; Landsat 9 on the same day gave the same picture. Snow and water both reflect green and absorb shortwave infrared. Near-infrared is what separates them: water absorbs it, snow reflects it.
+
+What works, measured on that scene against labels made from visible brightness only (snow: bright in February and land by March; water: dark and permanent), 14,959 water and 15,927 snow pixels:
+
+| Test | Water found | Snow called water |
+|---|---|---|
+| `MNDWI > 0` | 100% | 100% |
+| `MNDWI > 0` and NIR (B8) < 0.11 | 100% | 0% |
+| `NDWI > 0.2` (`(G - NIR) / (G + NIR)`) | 99.5% | 0% |
+| `--mask-snow` on `compute_index.py` (drops snow by ESA's SCL class 11, Landsat's QA snow bit) | 99.9% | 0.9% |
+
+Ranked by separability (AUC), NDWI, the NIR band, the blue band and SWIR1 reflectance all score above 0.99; `MNDWI` scores 0.88, and the `AWEIsh`, `AWEInsh` and `WI2015` water indices score near 0 (they rate snow as more water-like than water). So in a scene with snow, map water with `NDWI` and a threshold near 0.2, or add `--mask-snow` (and say how much was masked). `NDSI` itself is the right index for mapping snow. Limits: one scene, one city, easy cases (clearly bright against clearly dark): thin snow, ice-covered lakes and shadowed urban pixels were not tested, and NDWI > 0.2 does flag some building shadows. Radar was not tested.
+
+## 8. Make a share card (picture, GIF, video)
+
+For a post or a comment, turn a result into one picture that a person who does not work with satellite data can read in five seconds: a plain-language question as the headline, two or three big numbers, a photo next to the result drawn on it, a legend, and one honest sentence about the limits. The design is an HTML template (`templates/card.html`), rendered by Chrome, so it looks like a designed page, not a plot.
+
+```bash
+uv run SKILL_DIR/scripts/layers.py photo WORK/aoi.json WORK/post/scene.json --kind swir --boundary PARK.geojson --out WORK/card/photo.png
+uv run SKILL_DIR/scripts/layers.py mask WORK/pre/NBR.tif WORK/post/NBR.tif --drop 0.27 --offset auto --boundary PARK.geojson --color "#d71a1a" --out WORK/card/burn.png
+uv run SKILL_DIR/scripts/layers.py points WORK/hotspots.json --grid WORK/post/NBR.tif --boundary PARK.geojson --out WORK/card/hot.json
+uv run SKILL_DIR/scripts/card.py WORK/card/card.json                 # the picture
+uv run SKILL_DIR/scripts/card.py WORK/card/card.json --animate       # plus a GIF and an MP4
+```
+
+`layers.py` makes a satellite photo (`--kind true` or `swir`) and flat-colour masks that are transparent elsewhere (`--above`, `--below`, `--also PATH,above|below,T` for a second GeoTIFF, `--drop`, `--nodata`, `--all`, limited to a park outline with `--boundary` or to a disc around a place with `--within=LAT,LNG,KM`), and prints the hectares and share each mask covers: use those numbers on the card. `card.py` reads a JSON spec (copy one from `templates/examples/`, which also lists the layer commands for each): `kicker`, `title` (`*words*` get the accent colour), `stats` (big numbers, optionally counting up), `rows` of cells (`panel` with stacked `layers` and a `legend`, `pair` for a before → after strip in one bordered card with a date `chip` on each of its `frames`, `stat`, `bars`, `label`, `text`; a panel or pair can `crop` to part of the picture), `note`, `footer`. With `at: [start, end]` times, `--animate` reveals layers (`fade`, `down`, `right`, `scan-right`), counts numbers up, pops hotspots and grows bars. It needs Google Chrome (driven by Playwright, nothing to download) and ffmpeg.
+
+Rules that made the cards readable: say what the colours mean in words, and no index names in the headline; show what a test called water or burned *on the photo*, not on a grey grid; put the hectares as football fields when it helps; count hotspots inside the boundary only (`layers.py points` prints how many of the total fall inside); put the headline and photo at time 0, because feeds show only the first frame of a GIF; end on the limits (cloud share, pixel size, what the data cannot say). Check the picture before posting, and for a GIF that a feed may show as a still, post the MP4 instead.
 
 ## Answering
 

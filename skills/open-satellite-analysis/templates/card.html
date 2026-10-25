@@ -1,0 +1,226 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Share card</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root { --ink: #1c1917; --muted: #57534e; --line: #e7e5e4; --bg: #fafaf9; --accent: #d71a1a; --panel: #fff; }
+  * { box-sizing: border-box; margin: 0; }
+  body { background: var(--bg); font-family: Inter, system-ui, -apple-system, sans-serif; color: var(--ink); display: flex; flex-direction: column; overflow: hidden; padding: 52px 60px 40px; }
+  .kicker { font-size: 19px; font-weight: 600; color: var(--accent); letter-spacing: .02em; text-transform: uppercase; }
+  h1 { font-size: 46px; line-height: 1.1; font-weight: 800; margin-top: 10px; letter-spacing: -.02em; }
+  h1 em { font-style: normal; color: var(--accent); }
+  .sub { font-size: 22px; color: var(--muted); margin-top: 14px; line-height: 1.4; }
+  .stats, .row { display: grid; gap: 18px; margin-top: 24px; align-items: start; }
+  .card { background: var(--panel); border: 1px solid var(--line); border-radius: 16px; padding: 18px 20px; }
+  .n { font-size: 40px; font-weight: 800; line-height: 1.05; letter-spacing: -.02em; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .t { font-size: 17px; color: var(--muted); margin-top: 8px; line-height: 1.35; }
+  .row-label { font-size: 21px; font-weight: 700; margin-top: 22px; }
+  .row-label + .row { margin-top: 12px; }
+  .panel h3 { font-size: 20px; font-weight: 700; margin-bottom: 4px; }
+  .panel p { font-size: 16px; color: var(--muted); margin-bottom: 10px; line-height: 1.35; }
+  .frame { position: relative; overflow: hidden; }
+  .frame.round { border-radius: 14px; }
+  .frame img { width: 100%; display: block; }
+  .frame img.layer { position: absolute; inset: 0; height: 100%; }
+  .scan { position: absolute; top: 0; bottom: 0; width: 4px; margin-left: -2px; background: #fff; box-shadow: 0 0 14px 3px var(--accent); opacity: 0; }
+  .dot { position: absolute; width: 16px; height: 16px; margin: -8px 0 0 -8px; border-radius: 50%; background: #ffd400; border: 2.5px solid #1c1917; opacity: 0; }
+  .ring { position: absolute; width: 16px; height: 16px; margin: -8px 0 0 -8px; border-radius: 50%; border: 2.5px solid #ffd400; opacity: 0; }
+  .legend { display: flex; flex-wrap: wrap; gap: 8px 18px; font-size: 15px; color: var(--muted); margin-top: 10px; }
+  .legend span { display: inline-flex; align-items: center; gap: 7px; }
+  .sw { width: 16px; height: 16px; border-radius: 4px; display: inline-block; flex: none; }
+  .sw.dot { position: static; margin: 0; opacity: 1; border-radius: 50%; border: 2px solid #1c1917; }
+  .label { font-size: 17px; font-weight: 600; color: var(--muted); display: inline-flex; gap: 8px; align-items: center; }
+  .bars { display: flex; align-items: flex-end; gap: 22px; height: 230px; padding-top: 8px; }
+  .grp { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; height: 100%; }
+  .grp .pair { display: flex; align-items: flex-end; gap: 6px; height: 100%; width: 100%; justify-content: center; }
+  .bar { flex: 1; max-width: 46px; border-radius: 6px 6px 0 0; position: relative; }
+  .bar b { position: absolute; top: -22px; left: 50%; transform: translateX(-50%); font-size: 15px; font-weight: 700; white-space: nowrap; font-variant-numeric: tabular-nums; }
+  .grp .x { font-size: 16px; color: var(--muted); margin-top: 8px; font-weight: 600; }
+  .note { margin-top: 24px; background: var(--panel); border: 1px solid var(--line); border-radius: 16px; padding: 18px 22px; font-size: 18px; line-height: 1.45; }
+  .note b { color: var(--ink); }
+  .pair-card { background: var(--panel); border: 1px solid var(--line); border-radius: 20px; padding: 18px; }
+  .strip { display: flex; align-items: center; gap: 14px; }
+  .strip .frame { flex: 1; min-width: 0; }
+  .arrow { color: var(--accent); font-size: 22px; flex: none; }
+  .chip { position: absolute; top: 12px; left: 12px; background: #1c1917; color: #fff; font: 600 17px "JetBrains Mono", ui-monospace, Menlo, monospace; padding: 5px 11px; border-radius: 8px; }
+  .pair-title { font-size: 26px; margin-top: 14px; }
+  .pair-title b { font-weight: 800; letter-spacing: -.01em; }
+  .pair-title span { color: var(--muted); font-size: 21px; }
+  .pair-cap { font-size: 17px; color: var(--muted); margin-top: 6px; line-height: 1.4; }
+  .foot { display: flex; justify-content: space-between; gap: 24px; font-size: 14px; color: #a8a29e; margin-top: auto; padding-top: 14px; }
+  .foot span:last-child { white-space: nowrap; }
+</style>
+</head>
+<body>
+<script>const SPEC = __SPEC__;</script>
+<script>
+  const clamp = (x) => Math.max(0, Math.min(1, x));
+  const ease = (x) => 1 - Math.pow(1 - x, 3);
+  const back = (x) => 1 + 3.2 * Math.pow(x - 1, 3) + 2.2 * Math.pow(x - 1, 2);
+  const $el = (tag, cls, html) => { const e = document.createElement(tag); if (cls) e.className = cls; if (html != null) e.innerHTML = html; return e; };
+  const esc = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;");
+  const rich = (s) => esc(s).replace(/\*\*(.+?)\*\*/g, "<b>$1</b>").replace(/\*(.+?)\*/g, "<em>$1</em>");
+  const locale = SPEC.locale || "en-US";
+  const fmt = (n) => Math.round(n).toLocaleString(locale);
+
+  // `at` is [start, end] in seconds; a card without any `at` is static. P(at, t) is the eased 0..1 progress.
+  let lastEnd = 0;
+  const win = (at) => { if (Array.isArray(at)) lastEnd = Math.max(lastEnd, at[1]); return at; };
+  const raw = (at, t) => (at ? clamp((t - at[0]) / Math.max(at[1] - at[0], 1e-6)) : 1);
+  const P = (at, t) => ease(raw(at, t));
+
+  const ups = [];                       // functions (t, still) -> void, one per animated thing
+  const fade = (el, at) => { win(at); ups.push((t) => { const p = P(at, t); el.style.opacity = p; el.style.transform = `translateY(${(1 - p) * 22}px)`; }); };
+
+  document.documentElement.style.setProperty("--accent", SPEC.accent || "#d71a1a");
+  const [W, H] = SPEC.size || [1080, 1350];
+  document.body.style.width = W + "px"; document.body.style.height = H + "px";
+  if (SPEC.locale) document.documentElement.lang = SPEC.locale.slice(0, 2);
+
+  const body = document.body;
+  if (SPEC.kicker) body.append($el("div", "kicker", esc(SPEC.kicker)));
+  if (SPEC.title) body.append($el("h1", "", rich(SPEC.title)));
+  if (SPEC.subtitle) body.append($el("p", "sub", rich(SPEC.subtitle)));
+
+  function stat(c) {
+    const box = $el("div", "stat card");
+    const n = $el("div", "n", esc(c.value ?? "")); const t = $el("div", "t", esc(c.label || ""));
+    if (c.color) n.style.color = c.color === "accent" ? "var(--accent)" : c.color;
+    box.append(n, t);
+    if (c.count) {                      // phases: each counts from the previous end to its own `to`
+      const phases = (Array.isArray(c.count) ? c.count : [c.count]).map((p) => { win(p.at); return p; });
+      ups.push((t_) => {
+        let prev = 0, shown = null;
+        for (const p of phases) {
+          const from = p.from ?? prev, v = from + (p.to - from) * P(p.at, t_);
+          if (!p.at || t_ >= p.at[0]) shown = (p.prefix || "") + fmt(v) + (p.suffix || "");
+          prev = p.to;
+        }
+        n.textContent = shown ?? (phases[0].prefix || "") + "0" + (phases[0].suffix || "");
+      });
+    }
+    if (c.label_final) { win(c.label_final_at); ups.push((t_) => { t.textContent = !c.label_final_at || t_ >= c.label_final_at[0] ? c.label_final : c.label; }); }
+    if (c.at) fade(box, c.at);
+    return box;
+  }
+
+  function legendItem(it) {
+    const s = $el("span", "", `<i class="sw ${it.shape === "dot" ? "dot" : ""}" style="background:${it.color}"></i>${esc(it.label)}`);
+    if (it.at) { win(it.at); ups.push((t) => { s.style.opacity = P(it.at, t); }); }
+    return s;
+  }
+
+  function panel(c) {
+    const box = $el("div", "panel");
+    if (c.title) box.append($el("h3", "", esc(c.title)));
+    if (c.caption) box.append($el("p", "", rich(c.caption)));
+    box.append(frameOf(c));
+    if (c.legend) { const lg = $el("div", "legend"); c.legend.forEach((it) => lg.append(legendItem(it))); box.append(lg); }
+    return box;
+  }
+
+  // A "before -> after" strip in a bordered card: `frames` are panels (each with a `chip` such as a date), arrows between.
+  function pair(c) {
+    const box = $el("div", "pair-card");
+    const strip = $el("div", "strip"); box.append(strip);
+    c.frames.forEach((f, i) => {
+      if (i) strip.append($el("div", "arrow", "▶"));
+      const fr = frameOf({ round: true, crop: c.crop, ...f });
+      if (f.chip) fr.append($el("span", "chip", esc(f.chip)));
+      strip.append(fr);
+    });
+    if (c.title) box.append($el("div", "pair-title", `<b>${esc(c.title)}</b>` + (c.place ? ` <span>· ${esc(c.place)}</span>` : "")));
+    if (c.caption) box.append($el("p", "pair-cap", rich(c.caption)));
+    if (c.legend) { const lg = $el("div", "legend"); c.legend.forEach((it) => lg.append(legendItem(it))); box.append(lg); }
+    if (c.at) fade(box, c.at);
+    return box;
+  }
+
+  function frameOf(c) {
+    const frame = $el("div", "frame" + (c.round ? " round" : ""));
+    if (c.aspect) frame.style.aspectRatio = c.aspect;
+    const crop = c.crop;                // [x, y, w, h] as 0-1 fractions of the pictures: zoom in on one part
+    const inCrop = ([x, y]) => !crop || (x / 100 >= crop[0] && x / 100 <= crop[0] + crop[2] && y / 100 >= crop[1] && y / 100 <= crop[1] + crop[3]);
+    const toCrop = ([x, y]) => (crop ? [((x / 100 - crop[0]) / crop[2]) * 100, ((y / 100 - crop[1]) / crop[3]) * 100] : [x, y]);
+    (c.layers || []).forEach((L, i) => {
+      if (L.kind === "points") {
+        const dots = [], rings = [];
+        L.xy.filter(inCrop).map(toCrop).forEach(([x, y]) => {
+          const r = $el("i", "ring"), d = $el("i", "dot");
+          r.style.left = d.style.left = x + "%"; r.style.top = d.style.top = y + "%";
+          frame.append(r, d); rings.push(r); dots.push(d);
+        });
+        win(L.at);
+        ups.push((t, still) => dots.forEach((d, k) => {
+          const n = dots.length, at = L.at ? [L.at[0] + (k / n) * (L.at[1] - L.at[0]) * 0.7, L.at[0] + (k / n) * (L.at[1] - L.at[0]) * 0.7 + (L.at[1] - L.at[0]) * 0.3] : null;
+          const p = raw(at, t); d.style.opacity = p > 0 ? 1 : 0; d.style.transform = `scale(${back(p)})`;
+          const pulse = p >= 1 && !still && L.pulse !== false ? ((t * 0.9 + k * 0.13) % 1) : 0;
+          rings[k].style.opacity = pulse > 0 ? 0.9 * (1 - pulse) : 0; rings[k].style.transform = `scale(${1 + pulse * 2.6})`;
+        }));
+        return;
+      }
+      const img = $el("img", i ? "layer" : ""); img.src = L.src; frame.append(img);
+      if (crop) {
+        const [cx, cy, cw, ch] = crop;
+        Object.assign(img.style, { position: "absolute", inset: "auto", width: 100 / cw + "%", height: 100 / ch + "%", left: (-cx / cw) * 100 + "%", top: (-cy / ch) * 100 + "%", imageRendering: "pixelated" });
+        if (i === 0) img.onload = () => { frame.style.aspectRatio = (img.naturalWidth * cw) / (img.naturalHeight * ch); };
+      }
+      if (c.aspect && i === 0) { img.style.height = "100%"; img.style.objectFit = "cover"; }
+      if (i === 0 && !c.aspect) { /* first layer sets the frame size */ }
+      const how = L.reveal || "fade";
+      let scan = null;
+      if (how === "scan-right") { scan = $el("i", "scan"); frame.append(scan); }
+      win(L.at);
+      ups.push((t) => {
+        const p = P(L.at, t);
+        if (how === "down") img.style.clipPath = `inset(0 0 ${(1 - p) * 100}% 0)`;
+        else if (how === "right" || how === "scan-right") img.style.clipPath = `inset(0 ${(1 - p) * 100}% 0 0)`;
+        else img.style.opacity = p;
+        if (scan) { scan.style.left = p * 100 + "%"; scan.style.opacity = p > 0 && p < 1 ? 1 : 0; }
+      });
+    });
+    return frame;
+  }
+
+  function bars(c) {
+    const box = $el("div", "panel");
+    if (c.title) box.append($el("h3", "", esc(c.title)));
+    if (c.caption) box.append($el("p", "", rich(c.caption)));
+    const max = c.max || Math.max(...c.groups.flatMap((g) => g.values)) * 1.15, area = $el("div", "bars"); box.append(area);
+    const all = [];
+    c.groups.forEach((g, gi) => {
+      const grp = $el("div", "grp"), pair = $el("div", "pair");
+      g.values.forEach((v, si) => {
+        const b = $el("div", "bar", `<b></b>`); b.style.background = c.series[si].color; pair.append(b);
+        const at = c.at ? [c.at[0] + gi * 0.35, c.at[0] + gi * 0.35 + 0.9] : null; win(at);
+        all.push((t) => { const p = P(at, t); b.style.height = (v / max) * 100 * p + "%"; b.firstChild.textContent = p > 0.02 ? v.toLocaleString(locale, { maximumFractionDigits: 1 }) + (c.unit || "") : ""; });
+      });
+      grp.append(pair, $el("div", "x", esc(g.label))); area.append(grp);
+    });
+    ups.push((t) => all.forEach((f) => f(t)));
+    const lg = $el("div", "legend"); c.series.forEach((s) => lg.append(legendItem({ label: s.label, color: s.color }))); box.append(lg);
+    return box;
+  }
+
+  const CELL = { stat, panel, pair, bars, label: (c) => $el("div", "label", (c.swatch ? `<i class="sw" style="background:${c.swatch}"></i>` : "") + esc(c.text)), text: (c) => $el("div", "t", rich(c.text)) };
+  const makeRow = (r) => { const row = $el("div", "row"); row.style.gridTemplateColumns = r.columns || `repeat(${r.cells.length}, 1fr)`; r.cells.forEach((c) => row.append(CELL[c.type || "panel"](c))); return row; };
+
+  if (SPEC.stats) {
+    const row = $el("div", "stats"); row.style.gridTemplateColumns = SPEC.stats_columns || `repeat(${SPEC.stats.length}, 1fr)`;
+    SPEC.stats.forEach((c) => row.append(stat(c))); body.append(row);
+  }
+  (SPEC.rows || []).forEach((r) => {
+    const wrap = $el("div"); if (r.label) wrap.append($el("div", "row-label", esc(r.label)));
+    wrap.append(makeRow(r)); body.append(wrap); if (r.at) fade(wrap, r.at);
+  });
+  if (SPEC.note) { const n = $el("div", "note", rich(SPEC.note)); body.append(n); if (SPEC.note_at) fade(n, SPEC.note_at); }
+  if (SPEC.footer) { const f = $el("div", "foot"); (Array.isArray(SPEC.footer) ? SPEC.footer : [SPEC.footer]).forEach((s) => f.append($el("span", "", esc(s)))); body.append(f); }
+
+  window.DURATION = SPEC.duration ?? (lastEnd ? Math.ceil((lastEnd + 2) * 2) / 2 : 0);
+  window.setT = (t, still) => ups.forEach((u) => u(t, still));
+  window.setT(window.DURATION, true);   // default view = the finished card
+</script>
+</body>
+</html>

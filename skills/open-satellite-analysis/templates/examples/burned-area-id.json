@@ -1,0 +1,181 @@
+{
+ "locale": "id-ID",
+ "accent": "#d71a1a",
+ "kicker": "Tahura Sultan Thaha Syaifuddin, Jambi · Satelit Landsat",
+ "title": "Kebakaran hutan 2026: *403–1.332 ha* terbakar",
+ "rows": [
+  {
+   "cells": [
+    {
+     "type": "pair",
+     "title": "Kebakaran",
+     "place": "Tahura Sultan Thaha, Batang Hari",
+     "caption": "Foto inframerah menembus asap: merah-ungu = bekas terbakar, hijau = hutan. Kotak ketiga = hasil hitungan dari dua foto itu.",
+     "frames": [
+      {
+       "chip": "22 Mei",
+       "layers": [
+        {
+         "src": "photo_swir_pre.png"
+        }
+       ]
+      },
+      {
+       "chip": "5 Okt",
+       "layers": [
+        {
+         "src": "photo_swir.png",
+         "at": [
+          1.0,
+          1.8
+         ]
+        }
+       ]
+      },
+      {
+       "chip": "hasil",
+       "layers": [
+        {
+         "src": "base.png",
+         "at": [
+          2.2,
+          2.8
+         ]
+        },
+        {
+         "src": "cloud.png",
+         "at": [
+          2.8,
+          3.6
+         ]
+        },
+        {
+         "src": "maybe.png",
+         "at": [
+          5.4,
+          6.6
+         ],
+         "reveal": "down"
+        },
+        {
+         "src": "sure.png",
+         "at": [
+          3.8,
+          5.2
+         ],
+         "reveal": "down"
+        },
+        {
+         "kind": "points",
+         "src": "hot.json",
+         "at": [
+          6.8,
+          7.8
+         ]
+        }
+       ]
+      }
+     ],
+     "legend": [
+      {
+       "label": "pasti terbakar",
+       "color": "#d71a1a",
+       "at": [
+        3.8,
+        4.2
+       ]
+      },
+      {
+       "label": "kemungkinan terbakar",
+       "color": "#ff9e40",
+       "at": [
+        5.4,
+        5.8
+       ]
+      },
+      {
+       "label": "tertutup awan",
+       "color": "#ccd1db",
+       "at": [
+        2.8,
+        3.2
+       ]
+      },
+      {
+       "label": "titik api 18–23 Okt",
+       "color": "#ffd400",
+       "shape": "dot",
+       "at": [
+        6.8,
+        7.2
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "stats": [
+  {
+   "value": "403–1.332 ha",
+   "color": "accent",
+   "label": "terbakar (22 Mei – 5 Okt), ≈ 560–1.870 lapangan bola",
+   "count": [
+    {
+     "to": 403,
+     "at": [
+      3.8,
+      5.2
+     ],
+     "suffix": " ha"
+    },
+    {
+     "to": 1332,
+     "prefix": "403–",
+     "at": [
+      5.4,
+      6.6
+     ],
+     "suffix": " ha"
+    }
+   ]
+  },
+  {
+   "value": "35%",
+   "label": "tertutup awan, jadi angka sebenarnya bisa lebih besar",
+   "count": {
+    "to": 35,
+    "at": [
+     2.8,
+     3.6
+    ],
+    "suffix": "%"
+   }
+  },
+  {
+   "value": "11",
+   "label": "titik api di dalam Tahura, 18–23 Okt (NASA)",
+   "count": {
+    "to": 11,
+    "at": [
+     6.8,
+     7.8
+    ]
+   }
+  }
+ ],
+ "stats_columns": "1.3fr 1fr 1fr",
+ "note": "**Masih bisa bertambah.** Sepertiga Tahura tertutup awan pada 5 Oktober, dan titik api masih terdeteksi sampai 23 Oktober. Berita melaporkan 677 ha.",
+ "note_at": [
+  8.2,
+  9.0
+ ],
+ "footer": [
+  "Landsat 8/9 (USGS/NASA) · titik api NASA FIRMS VIIRS · batas Tahura: OpenStreetMap (±15.980 ha)",
+  "open-satellite-analysis"
+ ],
+ "size": [
+  1080,
+  1080
+ ]
+}

@@ -51,6 +51,10 @@ SOURCES = {
 SCL_UNUSABLE = (0, 1, 3, 8, 9, 10)
 # Landsat QA_PIXEL bits that make a pixel unusable: fill, dilated cloud, cirrus, cloud, cloud shadow.
 QA_UNUSABLE_BITS = 0b11111
+# Snow: Sentinel-2 SCL class 11, Landsat QA_PIXEL bit 5. Left usable by default (snow is a real surface); mask it when
+# mapping water, because MNDWI is the snow index NDSI under another name and reads snow as water.
+SCL_SNOW = 11
+QA_SNOW_BIT = 0b100000
 
 # Cloud reads straight from the COGs over HTTPS, without listing directories.
 os.environ.setdefault("GDAL_DISABLE_READDIR_ON_OPEN", "EMPTY_DIR")
@@ -195,9 +199,9 @@ def read_asset(item, key, bounds, width, height, categorical=False, fill=0):
     return out
 
 
-def usable_mask(item, bounds, width, height):
-    """True where the pixel is usable: not cloud, cloud shadow, cirrus or outside the scene. For radar there is no
-    cloud, so it is only "inside the swath"."""
+def usable_mask(item, bounds, width, height, mask_snow=False):
+    """True where the pixel is usable: not cloud, cloud shadow, cirrus or outside the scene (and not snow, with
+    mask_snow). For radar there is no cloud, so it is only "inside the swath"."""
     import numpy as np
 
     if source_of(item) == "sentinel-1":
@@ -205,9 +209,9 @@ def usable_mask(item, bounds, width, height):
         return np.isfinite(vv) & (vv > 0)  # nodata outside the swath
     if source_of(item) == "landsat":
         qa = read_asset(item, "qa_pixel", bounds, width, height, categorical=True, fill=1)  # bit 0 = fill
-        return (qa & QA_UNUSABLE_BITS) == 0
+        return (qa & (QA_UNUSABLE_BITS | (QA_SNOW_BIT if mask_snow else 0))) == 0
     scl = read_asset(item, "scl", bounds, width, height, categorical=True, fill=0)
-    return ~np.isin(scl, SCL_UNUSABLE)
+    return ~np.isin(scl, SCL_UNUSABLE + ((SCL_SNOW,) if mask_snow else ()))
 
 
 def save_geotiff(array, path, crs, transform):

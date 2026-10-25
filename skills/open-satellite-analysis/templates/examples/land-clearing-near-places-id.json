@@ -1,0 +1,132 @@
+{
+ "locale": "id-ID",
+ "accent": "#f97316",
+ "kicker": "Tahura Sultan Thaha Syaifuddin, Jambi · Satelit Landsat",
+ "title": "Pengeboran minyak ilegal: *+30 ha* lahan terbuka baru",
+ "stats": [
+  {
+   "value": "+30 ha",
+   "color": "accent",
+   "label": "lahan terbuka baru dekat Bungku & Pompa Air, 2016 → 2018",
+   "count": {
+    "to": 30,
+    "prefix": "+",
+    "suffix": " ha",
+    "at": [
+     3.0,
+     4.6
+    ]
+   }
+  },
+  {
+   "value": "200+ ha",
+   "label": "area pengeboran menurut pemberitaan"
+  },
+  {
+   "value": "5 ha",
+   "label": "masih terbuka di zona itu pada 2026",
+   "count": {
+    "to": 5,
+    "suffix": " ha",
+    "at": [
+     6.0,
+     6.8
+    ]
+   }
+  }
+ ],
+ "rows": [
+  {
+   "cells": [
+    {
+     "type": "pair",
+     "title": "Pengeboran ilegal",
+     "place": "sekitar Desa Bungku & Pompa Air",
+     "caption": "Foto warna asli, diperbesar di sekitar kedua desa. Oranye = hutan yang jadi lahan terbuka antara 2016 dan 2018. Lingkaran biru = radius 3 km dari desa.",
+     "crop": [
+      0.593,
+      0.34,
+      0.407,
+      0.46
+     ],
+     "frames": [
+      {
+       "chip": "2016",
+       "layers": [
+        {
+         "src": "photo_2016.png"
+        },
+        {
+         "src": "zone.png",
+         "at": [
+          1.0,
+          1.8
+         ]
+        }
+       ]
+      },
+      {
+       "chip": "2018",
+       "layers": [
+        {
+         "src": "photo_2018.png",
+         "at": [
+          1.0,
+          1.8
+         ]
+        },
+        {
+         "src": "zone.png",
+         "at": [
+          1.0,
+          1.8
+         ]
+        },
+        {
+         "src": "new_zone.png",
+         "at": [
+          3.0,
+          4.6
+         ],
+         "reveal": "scan-right"
+        }
+       ]
+      }
+     ],
+     "legend": [
+      {
+       "label": "zona 3 km dari desa",
+       "color": "#1d6fd1",
+       "at": [
+        1.0,
+        1.4
+       ]
+      },
+      {
+       "label": "jadi lahan terbuka 2016–2018",
+       "color": "#f97316",
+       "at": [
+        3.0,
+        3.4
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "note": "**Bacaan jujurnya:** satelit gratis (30 m) hanya melihat ±30 ha lahan terbuka baru, jauh di bawah 200+ ha yang diberitakan. Sumur dan jalan kecil di bawah pohon tidak terlihat, dan citra tidak bisa memastikan penyebabnya (bisa juga kebun atau kebakaran).",
+ "note_at": [
+  7.2,
+  8.0
+ ],
+ "footer": [
+  "Landsat 8/9 (USGS/NASA) · batas & desa: OpenStreetMap · berita: ANTARA, Metro Jambi",
+  "open-satellite-analysis"
+ ],
+ "stats_columns": "1.35fr 1fr 1fr",
+ "size": [
+  1080,
+  1350
+ ]
+}
