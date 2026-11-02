@@ -1,0 +1,161 @@
+{
+  "bbox": [
+    103.143369,
+    -1.961774,
+    103.280311,
+    -1.80209
+  ],
+  "window": "7d",
+  "count": 13,
+  "by_date": {
+    "2026-10-18": 3,
+    "2026-10-20": 6,
+    "2026-10-23": 4
+  },
+  "by_confidence": {
+    "nominal": 13
+  },
+  "by_sensor": {
+    "VIIRS_SNPP": 5,
+    "VIIRS_NOAA20": 5,
+    "VIIRS_NOAA21": 3
+  },
+  "sensors": [
+    "VIIRS_SNPP",
+    "VIIRS_NOAA20",
+    "VIIRS_NOAA21"
+  ],
+  "note": "Hotspots are heat signals, not confirmed fires. VIIRS pixels are 375 m, MODIS 1 km.",
+  "points": [
+    {
+      "lat": -1.83298,
+      "lng": 103.19013,
+      "date": "2026-10-18",
+      "time_utc": "1906",
+      "confidence": "nominal",
+      "frp_mw": 0.69,
+      "daynight": "N",
+      "source": "VIIRS_SNPP"
+    },
+    {
+      "lat": -1.84864,
+      "lng": 103.20009,
+      "date": "2026-10-20",
+      "time_utc": "1828",
+      "confidence": "nominal",
+      "frp_mw": 1.43,
+      "daynight": "N",
+      "source": "VIIRS_SNPP"
+    },
+    {
+      "lat": -1.85243,
+      "lng": 103.19945,
+      "date": "2026-10-20",
+      "time_utc": "1828",
+      "confidence": "nominal",
+      "frp_mw": 1.43,
+      "daynight": "N",
+      "source": "VIIRS_SNPP"
+    },
+    {
+      "lat": -1.85083,
+      "lng": 103.19678,
+      "date": "2026-10-20",
+      "time_utc": "1828",
+      "confidence": "nominal",
+      "frp_mw": 2.62,
+      "daynight": "N",
+      "source": "VIIRS_SNPP"
+    },
+    {
+      "lat": -1.85159,
+      "lng": 103.2014,
+      "date": "2026-10-20",
+      "time_utc": "1828",
+      "confidence": "nominal",
+      "frp_mw": 1.86,
+      "daynight": "N",
+      "source": "VIIRS_SNPP"
+    },
+    {
+      "lat": -1.82979,
+      "lng": 103.18597,
+      "date": "2026-10-18",
+      "time_utc": "1925",
+      "confidence": "nominal",
+      "frp_mw": 1.28,
+      "daynight": "N",
+      "source": "VIIRS_NOAA20"
+    },
+    {
+      "lat": -1.85055,
+      "lng": 103.19703,
+      "date": "2026-10-20",
+      "time_utc": "1847",
+      "confidence": "nominal",
+      "frp_mw": 1.63,
+      "daynight": "N",
+      "source": "VIIRS_NOAA20"
+    },
+    {
+      "lat": -1.85117,
+      "lng": 103.20096,
+      "date": "2026-10-20",
+      "time_utc": "1847",
+      "confidence": "nominal",
+      "frp_mw": 1.63,
+      "daynight": "N",
+      "source": "VIIRS_NOAA20"
+    },
+    {
+      "lat": -1.86097,
+      "lng": 103.15382,
+      "date": "2026-10-23",
+      "time_utc": "0650",
+      "confidence": "nominal",
+      "frp_mw": 15.78,
+      "daynight": "D",
+      "source": "VIIRS_NOAA20"
+    },
+    {
+      "lat": -1.84954,
+      "lng": 103.20441,
+      "date": "2026-10-23",
+      "time_utc": "0650",
+      "confidence": "nominal",
+      "frp_mw": 8.07,
+      "daynight": "D",
+      "source": "VIIRS_NOAA20"
+    },
+    {
+      "lat": -1.83166,
+      "lng": 103.18997,
+      "date": "2026-10-18",
+      "time_utc": "0729",
+      "confidence": "nominal",
+      "frp_mw": 4.39,
+      "daynight": "D",
+      "source": "VIIRS_NOAA21"
+    },
+    {
+      "lat": -1.86393,
+      "lng": 103.15261,
+      "date": "2026-10-23",
+      "time_utc": "0555",
+      "confidence": "nominal",
+      "frp_mw": 6.6,
+      "daynight": "D",
+      "source": "VIIRS_NOAA21"
+    },
+    {
+      "lat": -1.86254,
+      "lng": 103.20997,
+      "date": "2026-10-23",
+      "time_utc": "1836",
+      "confidence": "nominal",
+      "frp_mw": 0.46,
+      "daynight": "N",
+      "source": "VIIRS_NOAA21"
+    }
+  ]
+}

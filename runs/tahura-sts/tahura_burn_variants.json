@@ -1,0 +1,13 @@
+{
+ "offset_median_dNBR_unburned": 0.132,
+ "dNBR>=0.27": 1331.9,
+ "dNBR-offset>=0.27": 414.2,
+ "dNBR>=0.27 & post<0.2": 307.3,
+ "dNBR>=0.27 & post<0.1": 63.5,
+ "offset_burn_north_half_ha": 280.8,
+ "offset_burn_south_half_ha": 133.4,
+ "visible_north_pct": 39.1,
+ "nonforest_NBR<0.3_2018_ha": 241.8,
+ "nonforest_NBR<0.3_2026_05_ha": 143.2,
+ "forest_to_nonforest_ha": 138.6
+}

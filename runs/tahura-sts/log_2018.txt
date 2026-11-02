@@ -1,0 +1,15 @@
+  S2B_48MUC_20180829_0_L2A  2018-08-29  tile cloud  44.3%  AOI unusable  95.8%
+  S2B_48MUC_20180829_1_L2A  2018-08-29  tile cloud  56.8%  AOI unusable  99.6%
+  S2B_48MTC_20180829_0_L2A  2018-08-29  tile cloud  65.2%  AOI unusable  95.8%
+  S2B_48MTC_20180829_1_L2A  2018-08-29  tile cloud  73.5%  AOI unusable  99.8%
+  S2A_48MTC_20180903_0_L2A  2018-09-03  tile cloud  39.2%  AOI unusable  99.0%
+  S2A_48MTD_20180903_0_L2A  2018-09-03  tile cloud  40.4%  AOI unusable  99.0%
+  S2A_48MUC_20180903_0_L2A  2018-09-03  tile cloud  48.0%  AOI unusable 100.0%
+  S2A_48MTC_20180903_1_L2A  2018-09-03  tile cloud  53.1%  AOI unusable 100.0%
+  S2A_48MTD_20180903_1_L2A  2018-09-03  tile cloud  53.2%  AOI unusable 100.0%
+  S2A_48MUC_20180903_1_L2A  2018-09-03  tile cloud  56.8%  AOI unusable 100.0%
+  S2A_48MUD_20180903_0_L2A  2018-09-03  tile cloud  94.1%  AOI unusable 100.0%
+  S2A_48MUD_20180903_1_L2A  2018-09-03  tile cloud  94.4%  AOI unusable 100.0%
+note: newer scenes skipped for cloud: 2018-09-03 (99.0% unusable), 2018-09-03 (99.0% unusable), 2018-09-03 (100.0% unusable), 2018-09-03 (100.0% unusable), 2018-09-03 (100.0% unusable), 2018-09-03 (100.0% unusable), 2018-09-03 (100.0% unusable), 2018-09-03 (100.0% unusable)
+S2B_48MTC_20180829_0_L2A  2018-08-29  tile 48MTC  AOI unusable 95.8%  (no scene met --max-cloud 10.0; this is the clearest)
+exit 2

@@ -1,0 +1,21 @@
+  LC08_L2SP_125061_20180727_02_T1  2018-07-27  tile cloud  14.6%  AOI unusable  63.0%
+  LC08_L2SP_125061_20180812_02_T1  2018-08-12  tile cloud  48.9%  AOI unusable  71.9%
+  LC08_L2SP_125061_20180711_02_T1  2018-07-11  tile cloud  63.9%  AOI unusable  98.6%
+  LC08_L2SP_125061_20180828_02_T1  2018-08-28  tile cloud  38.5%  AOI unusable  64.4%
+  LC08_L2SP_125061_20180913_02_T1  2018-09-13  tile cloud  33.5%  AOI unusable  69.2%
+  LC08_L2SP_125061_20180609_02_T1  2018-06-09  tile cloud  62.1%  AOI unusable  13.0%
+  LC08_L2SP_125061_20180929_02_T1  2018-09-29  tile cloud  32.0%  AOI unusable  37.9%
+  LC08_L2SP_125061_20180524_02_T1  2018-05-24  tile cloud  66.2%  AOI unusable  78.2%
+  LC08_L2SP_125061_20181015_02_T1  2018-10-15  tile cloud  40.2%  AOI unusable  71.0%
+  LC08_L2SP_125061_20180508_02_T1  2018-05-08  tile cloud  26.5%  AOI unusable  67.2%
+  LC08_L2SP_125061_20181031_02_T1  2018-10-31  tile cloud  61.6%  AOI unusable  56.1%
+  LC08_L2SP_125061_20180422_02_T1  2018-04-22  tile cloud  89.5%  AOI unusable  94.0%
+  LC08_L2SP_125061_20181116_02_T1  2018-11-16  tile cloud  59.5%  AOI unusable  99.1%
+  LC08_L2SP_125061_20180406_02_T1  2018-04-06  tile cloud  47.8%  AOI unusable  85.2%
+  LC08_L2SP_125061_20181202_02_T2  2018-12-02  tile cloud  92.8%  AOI unusable 100.0%
+  LC08_L2SP_125061_20180321_02_T1  2018-03-21  tile cloud  59.3%  AOI unusable  32.6%
+  LC08_L2SP_125061_20181218_02_T1  2018-12-18  tile cloud  49.5%  AOI unusable  15.5%
+  LC08_L2SP_125061_20180305_02_T1  2018-03-05  tile cloud  87.3%  AOI unusable 100.0%
+note: newer scenes skipped for cloud: 2018-07-27 (63.0% unusable), 2018-08-12 (71.9% unusable), 2018-07-11 (98.6% unusable), 2018-08-28 (64.4% unusable), 2018-09-13 (69.2% unusable), 2018-09-29 (37.9% unusable), 2018-10-15 (71.0% unusable), 2018-10-31 (56.1% unusable), 2018-11-16 (99.1% unusable), 2018-12-02 (100.0% unusable), 2018-12-18 (15.5% unusable)
+LC08_L2SP_125061_20180609_02_T1  2018-06-09  tile 125/061  AOI unusable 13.0%  (no scene met --max-cloud 10.0; this is the clearest)
+exit 2

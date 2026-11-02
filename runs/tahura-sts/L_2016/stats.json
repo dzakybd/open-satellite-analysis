@@ -1,0 +1,38 @@
+{
+  "scene": {
+    "source": "landsat",
+    "id": "LC08_L2SP_125061_20160806_02_T1",
+    "date": "2016-08-06",
+    "platform": "landsat-8",
+    "tile": "125/061",
+    "aoi_unusable_pct": 0.0
+  },
+  "aoi": {
+    "name": "Tahura Sultan Thaha Syaifuddin (OSM boundary bbox)",
+    "lat": -1.8819322500000002,
+    "lng": 103.21184025,
+    "bbox": [
+      103.143369,
+      -1.961774,
+      103.280311,
+      -1.80209
+    ]
+  },
+  "grid": {
+    "crs": "EPSG:32648",
+    "res_m": 30,
+    "width": 509,
+    "height": 589
+  },
+  "NBR": {
+    "long_name": "Normalized Burn Ratio",
+    "domain": "burn",
+    "formula": "(N-S2)/(N+S2)",
+    "reference": "https://doi.org/10.3133/ofr0211",
+    "valid_pct": 100.0,
+    "mean": 0.6545,
+    "median": 0.6759,
+    "p10": 0.5601,
+    "p90": 0.7312
+  }
+}

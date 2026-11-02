@@ -1,0 +1,30 @@
+{
+ "tahura_seen_ha": 14010,
+ "change_ha": 139,
+ "v_pompa_km_from_tahura_edge_or_inside": 2.07,
+ "v_bungku_km_from_tahura_edge_or_inside": 0.04,
+ "within_2km": {
+  "tahura_ha": 608,
+  "change_ha": 1,
+  "change_pct_of_zone": 0.09,
+  "rest_change_pct": 1.03
+ },
+ "within_3km": {
+  "tahura_ha": 1393,
+  "change_ha": 4,
+  "change_pct_of_zone": 0.29,
+  "rest_change_pct": 1.07
+ },
+ "within_5km": {
+  "tahura_ha": 3718,
+  "change_ha": 9,
+  "change_pct_of_zone": 0.25,
+  "rest_change_pct": 1.26
+ },
+ "within_8km": {
+  "tahura_ha": 8817,
+  "change_ha": 77,
+  "change_pct_of_zone": 0.87,
+  "rest_change_pct": 1.18
+ }
+}

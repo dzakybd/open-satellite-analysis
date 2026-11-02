@@ -1,0 +1,7 @@
+MNDWI: mean 0.3652  median 0.4273  valid 98.4%
+NDWI: mean 0.0753  median -0.0276  valid 98.4%
+NDVI: mean -0.0822  median 0.0044  valid 98.4%
+NBR: mean 0.2269  median 0.3781  valid 98.4%
+NDSI: mean 0.3652  median 0.4273  valid 98.4%
+-> runs/nyc-snow/snow/ (GeoTIFF, PNG, stats.json, true_color.png, swir_false_color.png)
+exit 0

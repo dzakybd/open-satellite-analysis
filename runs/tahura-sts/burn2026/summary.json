@@ -1,0 +1,81 @@
+{
+  "mode": "dNBR (pre - post)",
+  "confident_burned_hectares": 1575.8,
+  "possible_burned_hectares": 11314.2,
+  "classes": [
+    {
+      "class": "high regrowth",
+      "dnbr_range": [
+        -Infinity,
+        -0.25
+      ],
+      "pixels": 35,
+      "hectares": 3.1
+    },
+    {
+      "class": "low regrowth",
+      "dnbr_range": [
+        -0.25,
+        -0.1
+      ],
+      "pixels": 635,
+      "hectares": 57.0
+    },
+    {
+      "class": "unburned",
+      "dnbr_range": [
+        -0.1,
+        0.1
+      ],
+      "pixels": 45895,
+      "hectares": 4122.8
+    },
+    {
+      "class": "low severity",
+      "dnbr_range": [
+        0.1,
+        0.27
+      ],
+      "pixels": 125951,
+      "hectares": 11314.2
+    },
+    {
+      "class": "moderate-low severity",
+      "dnbr_range": [
+        0.27,
+        0.44
+      ],
+      "pixels": 14289,
+      "hectares": 1283.6
+    },
+    {
+      "class": "moderate-high severity",
+      "dnbr_range": [
+        0.44,
+        0.66
+      ],
+      "pixels": 3220,
+      "hectares": 289.3
+    },
+    {
+      "class": "high severity",
+      "dnbr_range": [
+        0.66,
+        Infinity
+      ],
+      "pixels": 32,
+      "hectares": 2.9
+    }
+  ],
+  "hotspot_check": {
+    "hotspots_between_dates": 0,
+    "note": "no hotspots between 2026-05-22 and 2026-10-05"
+  },
+  "index": "NBR",
+  "pre": "runs/tahura-sts/L_pre2026/NBR.tif",
+  "post": "runs/tahura-sts/L_post2026/NBR.tif",
+  "res_m": 29.97170831228484,
+  "aoi_hectares": 26931.2,
+  "compared_pct": 63.4,
+  "note": "Pixels cloudy, shadowed or missing on either date are excluded (see compared_pct)."
+}

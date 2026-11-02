@@ -1,0 +1,49 @@
+{
+  "scene": {
+    "source": "landsat",
+    "id": "LC09_L2SP_125061_20260522_02_T1",
+    "date": "2026-05-22",
+    "platform": "landsat-9",
+    "tile": "125/061",
+    "aoi_unusable_pct": 7.2
+  },
+  "aoi": {
+    "name": "Tahura Sultan Thaha Syaifuddin (OSM boundary bbox)",
+    "lat": -1.8819322500000002,
+    "lng": 103.21184025,
+    "bbox": [
+      103.143369,
+      -1.961774,
+      103.280311,
+      -1.80209
+    ]
+  },
+  "grid": {
+    "crs": "EPSG:32648",
+    "res_m": 30,
+    "width": 509,
+    "height": 589
+  },
+  "NBR": {
+    "long_name": "Normalized Burn Ratio",
+    "domain": "burn",
+    "formula": "(N-S2)/(N+S2)",
+    "reference": "https://doi.org/10.3133/ofr0211",
+    "valid_pct": 92.8,
+    "mean": 0.6533,
+    "median": 0.6824,
+    "p10": 0.5347,
+    "p90": 0.7306
+  },
+  "NDVI": {
+    "long_name": "Normalized Difference Vegetation Index",
+    "domain": "vegetation",
+    "formula": "(N-R)/(N+R)",
+    "reference": "https://ntrs.nasa.gov/citations/19740022614",
+    "valid_pct": 92.8,
+    "mean": 0.8282,
+    "median": 0.8521,
+    "p10": 0.7458,
+    "p90": 0.8797
+  }
+}

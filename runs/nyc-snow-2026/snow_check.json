@@ -1,0 +1,36 @@
+{
+ "scl_counts": {
+  "2": 1618,
+  "5": 2863,
+  "6": 25239,
+  "8": 14,
+  "10": 126,
+  "11": 62252
+ },
+ "snow (SCL 11)": {
+  "pixels": 62252,
+  "median_MNDWI": 0.556,
+  "median_NDWI": -0.017,
+  "median_NDVI": -0.004,
+  "median_NBR": 0.619,
+  "pct_read_as_water_MNDWI>0": 97.3,
+  "pct_read_as_water_NDWI>0": 39.9,
+  "pct_read_as_bare_NBR<0.1": 1.7,
+  "pct_read_as_bare_NDVI<0.2": 99.5,
+  "pct_vegetation_NBR>0.3": 91.3,
+  "same_pixels_2026-03-09_pct_MNDWI>0": 10.9,
+  "same_pixels_2026-03-09_median_NDVI": 0.082
+ },
+ "water (SCL 6)": {
+  "pixels": 25239,
+  "median_MNDWI": 0.865,
+  "median_NDWI": 0.393,
+  "median_NDVI": -0.3,
+  "median_NBR": 0.679,
+  "pct_read_as_water_MNDWI>0": 98.7,
+  "pct_read_as_water_NDWI>0": 93.0,
+  "pct_read_as_bare_NBR<0.1": 3.5,
+  "pct_read_as_bare_NDVI<0.2": 99.9,
+  "pct_vegetation_NBR>0.3": 90.8
+ }
+}

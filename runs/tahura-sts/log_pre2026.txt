@@ -1,0 +1,15 @@
+  S2C_48MUD_20260713_0_L2A  2026-07-13  tile cloud  37.2%  AOI unusable  88.1%
+  S2C_48MUC_20260713_0_L2A  2026-07-13  tile cloud  45.9%  AOI unusable  81.1%
+  S2C_48MTC_20260713_0_L2A  2026-07-13  tile cloud  56.0%  AOI unusable  66.5%
+  S2C_48MTD_20260713_0_L2A  2026-07-13  tile cloud  56.5%  AOI unusable  76.7%
+  S2B_48MTC_20260708_0_L2A  2026-07-08  tile cloud  55.7%  AOI unusable 100.0%
+  S2B_48MUC_20260708_0_L2A  2026-07-08  tile cloud  67.1%  AOI unusable 100.0%
+  S2B_48MTD_20260708_0_L2A  2026-07-08  tile cloud  78.2%  AOI unusable 100.0%
+  S2B_48MUD_20260708_0_L2A  2026-07-08  tile cloud  87.5%  AOI unusable 100.0%
+  S2A_48MUC_20260705_1_L2A  2026-07-05  tile cloud  50.4%  AOI unusable  81.1%
+  S2A_48MUD_20260705_2_L2A  2026-07-05  tile cloud  57.1%  AOI unusable  85.0%
+  S2A_48MTC_20260705_0_L2A  2026-07-05  tile cloud  69.5%  AOI unusable  57.8%
+  S2A_48MTD_20260705_0_L2A  2026-07-05  tile cloud  70.5%  AOI unusable  68.6%
+note: newer scenes skipped for cloud: 2026-07-13 (88.1% unusable), 2026-07-13 (81.1% unusable), 2026-07-13 (66.5% unusable), 2026-07-13 (76.7% unusable), 2026-07-08 (100.0% unusable), 2026-07-08 (100.0% unusable), 2026-07-08 (100.0% unusable), 2026-07-08 (100.0% unusable)
+S2A_48MTC_20260705_0_L2A  2026-07-05  tile 48MTC  AOI unusable 57.8%  (no scene met --max-cloud 10.0; this is the clearest)
+pre exit 2

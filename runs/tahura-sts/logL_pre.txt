@@ -1,0 +1,10 @@
+  LC09_L2SP_125061_20260725_02_T2  2026-07-25  tile cloud  87.5%  AOI unusable 100.0%
+  LC08_L2SP_125061_20260717_02_T1  2026-07-17  tile cloud  27.8%  AOI unusable  59.2%
+  LC08_L2SP_125061_20260701_02_T1  2026-07-01  tile cloud  15.3%  AOI unusable  64.1%
+  LC09_L2SP_125061_20260623_02_T1  2026-06-23  tile cloud  65.2%  AOI unusable  99.2%
+  LC09_L2SP_125061_20260607_02_T2  2026-06-07  tile cloud  90.3%  AOI unusable 100.0%
+  LC08_L2SP_125061_20260530_02_T1  2026-05-30  tile cloud  23.8%  AOI unusable  40.0%
+  LC09_L2SP_125061_20260522_02_T1  2026-05-22  tile cloud  57.8%  AOI unusable   7.2%
+note: newer scenes skipped for cloud: 2026-07-25 (100.0% unusable), 2026-07-17 (59.2% unusable), 2026-07-01 (64.1% unusable), 2026-06-23 (99.2% unusable), 2026-06-07 (100.0% unusable), 2026-05-30 (40.0% unusable)
+LC09_L2SP_125061_20260522_02_T1  2026-05-22  tile 125/061  AOI unusable 7.2%
+exit 0
