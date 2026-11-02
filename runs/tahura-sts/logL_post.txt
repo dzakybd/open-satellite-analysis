@@ -1,0 +1,5 @@
+  LC09_L2SP_125061_20261013_02_T1  2026-10-13  tile cloud  91.0%  AOI unusable 100.0%
+  LC08_L2SP_125061_20261005_02_T1  2026-10-05  tile cloud  69.3%  AOI unusable  35.0%
+note: newer scenes skipped for cloud: 2026-10-13 (100.0% unusable)
+LC08_L2SP_125061_20261005_02_T1  2026-10-05  tile 125/061  AOI unusable 35.0%
+exit 0

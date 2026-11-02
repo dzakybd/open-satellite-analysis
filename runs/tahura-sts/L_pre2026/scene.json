@@ -1,0 +1,96 @@
+{
+  "source": "landsat",
+  "id": "LC09_L2SP_125061_20260522_02_T1",
+  "datetime": "2026-05-22T03:16:45.094838Z",
+  "date": "2026-05-22",
+  "platform": "landsat-9",
+  "orbit": null,
+  "tile": "125/061",
+  "tile_cloud_pct": 57.83,
+  "aoi_unusable_pct": 7.2,
+  "meets_max_cloud": true,
+  "target_date": "2026-07-31",
+  "stac_item": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/landsat-c2-l2/items/LC09_L2SP_125061_20260522_02_T1",
+  "checked": [
+    {
+      "id": "LC09_L2SP_125061_20260725_02_T2",
+      "date": "2026-07-25",
+      "tile_cloud_pct": 87.48,
+      "aoi_unusable_pct": 100.0
+    },
+    {
+      "id": "LC08_L2SP_125061_20260717_02_T1",
+      "date": "2026-07-17",
+      "tile_cloud_pct": 27.76,
+      "aoi_unusable_pct": 59.2
+    },
+    {
+      "id": "LC08_L2SP_125061_20260701_02_T1",
+      "date": "2026-07-01",
+      "tile_cloud_pct": 15.32,
+      "aoi_unusable_pct": 64.1
+    },
+    {
+      "id": "LC09_L2SP_125061_20260623_02_T1",
+      "date": "2026-06-23",
+      "tile_cloud_pct": 65.16,
+      "aoi_unusable_pct": 99.2
+    },
+    {
+      "id": "LC09_L2SP_125061_20260607_02_T2",
+      "date": "2026-06-07",
+      "tile_cloud_pct": 90.3,
+      "aoi_unusable_pct": 100.0
+    },
+    {
+      "id": "LC08_L2SP_125061_20260530_02_T1",
+      "date": "2026-05-30",
+      "tile_cloud_pct": 23.81,
+      "aoi_unusable_pct": 40.0
+    },
+    {
+      "id": "LC09_L2SP_125061_20260522_02_T1",
+      "date": "2026-05-22",
+      "tile_cloud_pct": 57.83,
+      "aoi_unusable_pct": 7.2
+    }
+  ],
+  "newer_scenes_skipped": [
+    {
+      "id": "LC09_L2SP_125061_20260725_02_T2",
+      "date": "2026-07-25",
+      "tile_cloud_pct": 87.48,
+      "aoi_unusable_pct": 100.0
+    },
+    {
+      "id": "LC08_L2SP_125061_20260717_02_T1",
+      "date": "2026-07-17",
+      "tile_cloud_pct": 27.76,
+      "aoi_unusable_pct": 59.2
+    },
+    {
+      "id": "LC08_L2SP_125061_20260701_02_T1",
+      "date": "2026-07-01",
+      "tile_cloud_pct": 15.32,
+      "aoi_unusable_pct": 64.1
+    },
+    {
+      "id": "LC09_L2SP_125061_20260623_02_T1",
+      "date": "2026-06-23",
+      "tile_cloud_pct": 65.16,
+      "aoi_unusable_pct": 99.2
+    },
+    {
+      "id": "LC09_L2SP_125061_20260607_02_T2",
+      "date": "2026-06-07",
+      "tile_cloud_pct": 90.3,
+      "aoi_unusable_pct": 100.0
+    },
+    {
+      "id": "LC08_L2SP_125061_20260530_02_T1",
+      "date": "2026-05-30",
+      "tile_cloud_pct": 23.81,
+      "aoi_unusable_pct": 40.0
+    }
+  ]
+}

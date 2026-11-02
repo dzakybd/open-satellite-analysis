@@ -1,0 +1,192 @@
+{
+  "source": "landsat",
+  "id": "LC08_L2SP_125061_20180609_02_T1",
+  "datetime": "2018-06-09T03:16:14.976403Z",
+  "date": "2018-06-09",
+  "platform": "landsat-8",
+  "orbit": null,
+  "tile": "125/061",
+  "tile_cloud_pct": 62.13,
+  "aoi_unusable_pct": 13.0,
+  "meets_max_cloud": false,
+  "target_date": "2018-07-31",
+  "stac_item": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/landsat-c2-l2/items/LC08_L2SP_125061_20180609_02_T1",
+  "checked": [
+    {
+      "id": "LC08_L2SP_125061_20180727_02_T1",
+      "date": "2018-07-27",
+      "tile_cloud_pct": 14.56,
+      "aoi_unusable_pct": 63.0
+    },
+    {
+      "id": "LC08_L2SP_125061_20180812_02_T1",
+      "date": "2018-08-12",
+      "tile_cloud_pct": 48.89,
+      "aoi_unusable_pct": 71.9
+    },
+    {
+      "id": "LC08_L2SP_125061_20180711_02_T1",
+      "date": "2018-07-11",
+      "tile_cloud_pct": 63.9,
+      "aoi_unusable_pct": 98.6
+    },
+    {
+      "id": "LC08_L2SP_125061_20180828_02_T1",
+      "date": "2018-08-28",
+      "tile_cloud_pct": 38.46,
+      "aoi_unusable_pct": 64.4
+    },
+    {
+      "id": "LC08_L2SP_125061_20180913_02_T1",
+      "date": "2018-09-13",
+      "tile_cloud_pct": 33.55,
+      "aoi_unusable_pct": 69.2
+    },
+    {
+      "id": "LC08_L2SP_125061_20180609_02_T1",
+      "date": "2018-06-09",
+      "tile_cloud_pct": 62.13,
+      "aoi_unusable_pct": 13.0
+    },
+    {
+      "id": "LC08_L2SP_125061_20180929_02_T1",
+      "date": "2018-09-29",
+      "tile_cloud_pct": 31.99,
+      "aoi_unusable_pct": 37.9
+    },
+    {
+      "id": "LC08_L2SP_125061_20180524_02_T1",
+      "date": "2018-05-24",
+      "tile_cloud_pct": 66.24,
+      "aoi_unusable_pct": 78.2
+    },
+    {
+      "id": "LC08_L2SP_125061_20181015_02_T1",
+      "date": "2018-10-15",
+      "tile_cloud_pct": 40.2,
+      "aoi_unusable_pct": 71.0
+    },
+    {
+      "id": "LC08_L2SP_125061_20180508_02_T1",
+      "date": "2018-05-08",
+      "tile_cloud_pct": 26.47,
+      "aoi_unusable_pct": 67.2
+    },
+    {
+      "id": "LC08_L2SP_125061_20181031_02_T1",
+      "date": "2018-10-31",
+      "tile_cloud_pct": 61.65,
+      "aoi_unusable_pct": 56.1
+    },
+    {
+      "id": "LC08_L2SP_125061_20180422_02_T1",
+      "date": "2018-04-22",
+      "tile_cloud_pct": 89.51,
+      "aoi_unusable_pct": 94.0
+    },
+    {
+      "id": "LC08_L2SP_125061_20181116_02_T1",
+      "date": "2018-11-16",
+      "tile_cloud_pct": 59.51,
+      "aoi_unusable_pct": 99.1
+    },
+    {
+      "id": "LC08_L2SP_125061_20180406_02_T1",
+      "date": "2018-04-06",
+      "tile_cloud_pct": 47.78,
+      "aoi_unusable_pct": 85.2
+    },
+    {
+      "id": "LC08_L2SP_125061_20181202_02_T2",
+      "date": "2018-12-02",
+      "tile_cloud_pct": 92.81,
+      "aoi_unusable_pct": 100.0
+    },
+    {
+      "id": "LC08_L2SP_125061_20180321_02_T1",
+      "date": "2018-03-21",
+      "tile_cloud_pct": 59.3,
+      "aoi_unusable_pct": 32.6
+    },
+    {
+      "id": "LC08_L2SP_125061_20181218_02_T1",
+      "date": "2018-12-18",
+      "tile_cloud_pct": 49.47,
+      "aoi_unusable_pct": 15.5
+    },
+    {
+      "id": "LC08_L2SP_125061_20180305_02_T1",
+      "date": "2018-03-05",
+      "tile_cloud_pct": 87.28,
+      "aoi_unusable_pct": 100.0
+    }
+  ],
+  "newer_scenes_skipped": [
+    {
+      "id": "LC08_L2SP_125061_20180727_02_T1",
+      "date": "2018-07-27",
+      "tile_cloud_pct": 14.56,
+      "aoi_unusable_pct": 63.0
+    },
+    {
+      "id": "LC08_L2SP_125061_20180812_02_T1",
+      "date": "2018-08-12",
+      "tile_cloud_pct": 48.89,
+      "aoi_unusable_pct": 71.9
+    },
+    {
+      "id": "LC08_L2SP_125061_20180711_02_T1",
+      "date": "2018-07-11",
+      "tile_cloud_pct": 63.9,
+      "aoi_unusable_pct": 98.6
+    },
+    {
+      "id": "LC08_L2SP_125061_20180828_02_T1",
+      "date": "2018-08-28",
+      "tile_cloud_pct": 38.46,
+      "aoi_unusable_pct": 64.4
+    },
+    {
+      "id": "LC08_L2SP_125061_20180913_02_T1",
+      "date": "2018-09-13",
+      "tile_cloud_pct": 33.55,
+      "aoi_unusable_pct": 69.2
+    },
+    {
+      "id": "LC08_L2SP_125061_20180929_02_T1",
+      "date": "2018-09-29",
+      "tile_cloud_pct": 31.99,
+      "aoi_unusable_pct": 37.9
+    },
+    {
+      "id": "LC08_L2SP_125061_20181015_02_T1",
+      "date": "2018-10-15",
+      "tile_cloud_pct": 40.2,
+      "aoi_unusable_pct": 71.0
+    },
+    {
+      "id": "LC08_L2SP_125061_20181031_02_T1",
+      "date": "2018-10-31",
+      "tile_cloud_pct": 61.65,
+      "aoi_unusable_pct": 56.1
+    },
+    {
+      "id": "LC08_L2SP_125061_20181116_02_T1",
+      "date": "2018-11-16",
+      "tile_cloud_pct": 59.51,
+      "aoi_unusable_pct": 99.1
+    },
+    {
+      "id": "LC08_L2SP_125061_20181202_02_T2",
+      "date": "2018-12-02",
+      "tile_cloud_pct": 92.81,
+      "aoi_unusable_pct": 100.0
+    },
+    {
+      "id": "LC08_L2SP_125061_20181218_02_T1",
+      "date": "2018-12-18",
+      "tile_cloud_pct": 49.47,
+      "aoi_unusable_pct": 15.5
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+NBR: mean 0.5139  median 0.5535  valid 65.0%
+NDVI: mean 0.6097  median 0.6478  valid 65.0%
+-> runs/tahura-sts/L_post2026/ (GeoTIFF, PNG, stats.json, true_color.png, swir_false_color.png)
+exit 0

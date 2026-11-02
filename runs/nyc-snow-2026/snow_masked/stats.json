@@ -1,0 +1,49 @@
+{
+  "scene": {
+    "source": "sentinel-2",
+    "id": "S2C_18TWL_20260205_0_L2A",
+    "date": "2026-02-05",
+    "platform": "sentinel-2c",
+    "tile": "18TWL",
+    "aoi_unusable_pct": 0.2
+  },
+  "aoi": {
+    "name": "Central Park, Manhattan",
+    "lat": 40.782,
+    "lng": -73.965,
+    "bbox": [
+      -74.000591,
+      40.755051,
+      -73.929409,
+      40.808949
+    ]
+  },
+  "grid": {
+    "crs": "EPSG:32618",
+    "res_m": 20,
+    "width": 304,
+    "height": 303
+  },
+  "MNDWI": {
+    "long_name": "Modified Normalized Difference Water Index",
+    "domain": "water",
+    "formula": "(G-S1)/(G+S1)",
+    "reference": "https://doi.org/10.1080/01431160600589179",
+    "valid_pct": 32.3,
+    "mean": 0.6913,
+    "median": 0.8309,
+    "p10": 0.2314,
+    "p90": 0.932
+  },
+  "NDWI": {
+    "long_name": "Normalized Difference Water Index",
+    "domain": "water",
+    "formula": "(G-N)/(G+N)",
+    "reference": "https://doi.org/10.1080/01431169608948714",
+    "valid_pct": 32.3,
+    "mean": 0.3052,
+    "median": 0.3099,
+    "p10": -0.0125,
+    "p90": 0.5945
+  }
+}

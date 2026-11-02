@@ -1,0 +1,153 @@
+{
+ "locale": "en-US",
+ "accent": "#2b8cff",
+ "kicker": "Central Park, New York \u00b7 Sentinel-2 satellite \u00b7 5 Feb 2026",
+ "title": "Can satellites tell snow from water? *Yes.*",
+ "rows": [
+  {
+   "columns": "1fr 1fr",
+   "cells": [
+    {
+     "type": "panel",
+     "title": "Satellite photo",
+     "caption": "Snow is white. The rivers are dark.",
+     "round": true,
+     "layers": [
+      {
+       "src": "photo_feb.png"
+      }
+     ],
+     "crop": [
+      0,
+      0.08,
+      1,
+      0.84
+     ]
+    },
+    {
+     "type": "panel",
+     "title": "Old test: 97% \"water\"",
+     "caption": "MNDWI > 0 calls the snow \"water\" too.",
+     "round": true,
+     "layers": [
+      {
+       "src": "photo_feb.png"
+      },
+      {
+       "src": "water_old.png",
+       "at": [
+        1.2,
+        3.0
+       ],
+       "reveal": "scan-right"
+      }
+     ],
+     "legend": [
+      {
+       "label": "called water",
+       "color": "#2b8cff",
+       "at": [
+        1.2,
+        1.6
+       ]
+      }
+     ],
+     "crop": [
+      0,
+      0.08,
+      1,
+      0.84
+     ]
+    }
+   ]
+  },
+  {
+   "columns": "1fr 1fr",
+   "cells": [
+    {
+     "type": "panel",
+     "title": "Better test, real water: 22%",
+     "caption": "NDWI > 0.2 finds the rivers (and a few building shadows).",
+     "round": true,
+     "layers": [
+      {
+       "src": "photo_feb.png"
+      },
+      {
+       "src": "water_fixed.png",
+       "at": [
+        3.6,
+        5.4
+       ],
+       "reveal": "scan-right"
+      }
+     ],
+     "legend": [
+      {
+       "label": "water",
+       "color": "#2b8cff",
+       "at": [
+        3.6,
+        4.0
+       ]
+      }
+     ],
+     "crop": [
+      0,
+      0.08,
+      1,
+      0.84
+     ]
+    },
+    {
+     "type": "panel",
+     "title": "Same photo, real snow: 12%",
+     "caption": "Snow = very snowy (NDSI > 0.75) and no water (NDWI < 0.2). Parks and roofs light up; the frozen reservoir is ice.",
+     "round": true,
+     "layers": [
+      {
+       "src": "photo_feb.png"
+      },
+      {
+       "src": "snow_real.png",
+       "at": [
+        6.0,
+        7.8
+       ],
+       "reveal": "scan-right"
+      }
+     ],
+     "legend": [
+      {
+       "label": "snow",
+       "color": "#a855f7",
+       "at": [
+        6.0,
+        6.4
+       ]
+      }
+     ],
+     "crop": [
+      0,
+      0.08,
+      1,
+      0.84
+     ]
+    }
+   ]
+  }
+ ],
+ "note": "**Why:** snow and water both absorb shortwave infrared, so MNDWI can't separate them. Water also absorbs near-infrared and snow reflects it, which NDWI uses: 0% of snow called water, 99.5% of water found.",
+ "note_at": [
+  8.4,
+  9.2
+ ],
+ "footer": [
+  "Sentinel-2 L2A (ESA Copernicus), 20 m pixels \u00b7 one scene, one city",
+  "open-satellite-analysis"
+ ],
+ "size": [
+  1080,
+  1350
+ ]
+}

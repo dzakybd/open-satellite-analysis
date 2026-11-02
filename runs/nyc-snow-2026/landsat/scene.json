@@ -1,0 +1,23 @@
+{
+  "source": "landsat",
+  "id": "LC09_L2SP_014032_20260205_02_T1",
+  "datetime": "2026-02-05T15:40:07.284415Z",
+  "date": "2026-02-05",
+  "platform": "landsat-9",
+  "orbit": null,
+  "tile": "014/032",
+  "tile_cloud_pct": 8.28,
+  "aoi_unusable_pct": 3.1,
+  "meets_max_cloud": true,
+  "target_date": "2026-02-05",
+  "stac_item": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/landsat-c2-l2/items/LC09_L2SP_014032_20260205_02_T1",
+  "checked": [
+    {
+      "id": "LC09_L2SP_014032_20260205_02_T1",
+      "date": "2026-02-05",
+      "tile_cloud_pct": 8.28,
+      "aoi_unusable_pct": 3.1
+    }
+  ],
+  "newer_scenes_skipped": []
+}

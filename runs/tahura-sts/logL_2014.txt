@@ -1,0 +1,5 @@
+  LC08_L2SP_125061_20140817_02_T1  2014-08-17  tile cloud  51.7%  AOI unusable  78.1%
+  LC08_L2SP_125061_20140801_02_T1  2014-08-01  tile cloud  79.6%  AOI unusable 100.0%
+  LC08_L2SP_125061_20140902_02_T1  2014-09-02  tile cloud  23.3%  AOI unusable   1.0%
+LC08_L2SP_125061_20140902_02_T1  2014-09-02  tile 125/061  AOI unusable 1.0%
+exit 0

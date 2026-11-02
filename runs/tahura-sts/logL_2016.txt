@@ -1,0 +1,5 @@
+  LC08_L2SP_125061_20160822_02_T1  2016-08-22  tile cloud  23.8%  AOI unusable  98.3%
+  LC08_L2SP_125061_20160806_02_T1  2016-08-06  tile cloud  23.1%  AOI unusable   0.0%
+note: newer scenes skipped for cloud: 2016-08-22 (98.3% unusable)
+LC08_L2SP_125061_20160806_02_T1  2016-08-06  tile 125/061  AOI unusable 0.0%
+exit 0

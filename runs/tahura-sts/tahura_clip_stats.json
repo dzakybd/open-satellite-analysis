@@ -1,0 +1,31 @@
+{
+ "tahura_ha_raster": 15910.8,
+ "burn2026": {
+  "compared_pct": 65.0,
+  "dNBR_ge_0.27_ha": 1331.9,
+  "dNBR_ge_0.44_ha": 261.8,
+  "dNBR_0.1_0.27_ha": 6698.4,
+  "median_dNBR": 0.135,
+  "post_NBR_lt_0.1_ha_visible": 70.9
+ },
+ "bare_NBR_lt_0.05": {
+  "2018_ha": 0.1,
+  "2026_05_ha": 2.3,
+  "new_bare_ha": 2.3
+ },
+ "bare_NBR_lt_0.1": {
+  "2018_ha": 0.4,
+  "2026_05_ha": 4.9,
+  "new_bare_ha": 4.9
+ },
+ "bare_NBR_lt_0.15": {
+  "2018_ha": 2.1,
+  "2026_05_ha": 13.3,
+  "new_bare_ha": 13.3
+ },
+ "bare_compared_pct": 88.1,
+ "veg_NBR_gt_0.3": {
+  "2018_ha": 13767.9,
+  "2026_05_ha": 13866.5
+ }
+}

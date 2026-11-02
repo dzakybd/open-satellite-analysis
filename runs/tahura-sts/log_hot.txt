@@ -1,0 +1,30 @@
+{
+  "bbox": [
+    103.143369,
+    -1.961774,
+    103.280311,
+    -1.80209
+  ],
+  "window": "7d",
+  "count": 13,
+  "by_date": {
+    "2026-10-18": 3,
+    "2026-10-20": 6,
+    "2026-10-23": 4
+  },
+  "by_confidence": {
+    "nominal": 13
+  },
+  "by_sensor": {
+    "VIIRS_SNPP": 5,
+    "VIIRS_NOAA20": 5,
+    "VIIRS_NOAA21": 3
+  },
+  "sensors": [
+    "VIIRS_SNPP",
+    "VIIRS_NOAA20",
+    "VIIRS_NOAA21"
+  ],
+  "note": "Hotspots are heat signals, not confirmed fires. VIIRS pixels are 375 m, MODIS 1 km."
+}
+exit 0

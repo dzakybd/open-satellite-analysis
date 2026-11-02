@@ -1,0 +1,12 @@
+  LC08_L2SP_125061_20150820_02_T1  2015-08-20  tile cloud  27.1%  AOI unusable  66.7%
+  LC08_L2SP_125061_20150804_02_T1  2015-08-04  tile cloud  78.1%  AOI unusable 100.0%
+  LC08_L2SP_125061_20150905_02_T1  2015-09-05  tile cloud  44.4%  AOI unusable  55.7%
+  LC08_L2SP_125061_20150719_02_T1  2015-07-19  tile cloud  73.1%  AOI unusable  87.1%
+  LC08_L2SP_125061_20150921_02_T1  2015-09-21  tile cloud  70.3%  AOI unusable 100.0%
+  LC08_L2SP_125061_20150703_02_T1  2015-07-03  tile cloud  33.4%  AOI unusable  94.1%
+  LC08_L2SP_125061_20151007_02_T1  2015-10-07  tile cloud  69.5%  AOI unusable  91.9%
+  LC08_L2SP_125061_20150617_02_T1  2015-06-17  tile cloud  66.3%  AOI unusable  98.2%
+  LC08_L2SP_125061_20150601_02_T1  2015-06-01  tile cloud  27.2%  AOI unusable  79.3%
+  LC08_L2SP_125061_20151108_02_T1  2015-11-08  tile cloud  33.0%  AOI unusable   5.0%
+LC08_L2SP_125061_20151108_02_T1  2015-11-08  tile 125/061  AOI unusable 5.0%
+exit 0
